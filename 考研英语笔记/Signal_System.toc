@@ -1,5 +1,0 @@
-\contentsline {section}{\numberline {1}名词词组}{3}{}%
-\contentsline {subsection}{\numberline {1.1}名词词组的组成}{3}{}%
-\contentsline {subsection}{\numberline {1.2}名词的分类}{3}{}%
-\contentsline {subsubsection}{\numberline {1.2.1}普通名词}{3}{}%
-\contentsline {subsubsection}{\numberline {1.2.2}限定词}{3}{}%
