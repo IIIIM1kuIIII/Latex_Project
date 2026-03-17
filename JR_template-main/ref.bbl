@@ -1,0 +1,588 @@
+\begin{thebibliography}{100}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\else
+  \urlstyle{same}\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \DeclareUrlCommand\doi{\urlstyle{rm}}
+  \def\eprint#1#2{#2}
+\else
+  \def\doi#1{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+  \let\eprint\href
+\fi
+
+\bibitem{li2020hc}
+李永祯, 黄大通, 邢世其, 等.
+\newblock 合成孔径雷达干扰技术研究综述\allowbreak[J].
+\newblock 雷达学报, 2020, 9\allowbreak (5): 753-764.
+
+LI Yongzhen, HUANG Datong, XING Shiqi, \emph{et~al}.
+\newblock A review of synthetic aperture radar jamming technique\allowbreak[J].
+\newblock \emph{Journal of Radars}, 2020, 9\allowbreak (5): 753-764.
+
+\bibitem{wu2010hczs}
+吴晓芳, 代大海, 王雪松, 等.
+\newblock 合成孔径雷达电子对抗技术综述\allowbreak[J].
+\newblock 信号处理, 2010, 26\allowbreak (3): 424-435.
+
+WU Xiaofang, DAI Dahai, WANG Xuesong, \emph{et~al}.
+\newblock Review of synthetic aperture radar electronic
+  countermeasures\allowbreak[J].
+\newblock \emph{Signal Processing}, 2010, 26\allowbreak (3): 424-435.
+
+\bibitem{chen2022jy}
+陈思伟, 崔兴超, 李铭典, 等.
+\newblock 基于深度 {CNN} 模型的 {SAR}
+  图像有源干扰类型识别方法\allowbreak[J].
+\newblock 雷达学报, 2022, 11\allowbreak (5): 897-908.
+
+CHEN Siwei, CUI Xingchao, LI Mingdian, \emph{et~al}.
+\newblock {SAR} image active jamming type recognition based on deep {CNN}
+  model\allowbreak[J].
+\newblock \emph{Journal of Radars}, 2022, 11\allowbreak (5): 897-908.
+
+\bibitem{lb2004hc}
+李兵, 洪文.
+\newblock 合成孔径雷达噪声干扰研究\allowbreak[J].
+\newblock 电子学报, 2004, 32\allowbreak (12): 2035-2037.
+
+LI Bin, HONG Wen.
+\newblock Study of noise jamming to {SAR}\allowbreak[J].
+\newblock \emph{Acta Electronica Sinica}, 2004, 32\allowbreak (12): 2035-2037.
+
+\bibitem{lv2008dsar}
+吕波, 冯起, 张晓发, 等.
+\newblock 对{SAR}的随机脉冲卷积干扰研究\allowbreak[J].
+\newblock 中国电子科学研究院学报, 2008, 3\allowbreak (3): 276-279.
+
+LV Bo, FENG Qi, ZHANG Xiaofa, \emph{et~al}.
+\newblock Study of random pulse convolution jamming to {SAR}\allowbreak[J].
+\newblock \emph{Journal of China Academy of Electronics and Information Technology},
+  2008, 3\allowbreak (3): 276-279.
+
+\bibitem{huang2006dhc}
+黄洪旭, 黄知涛, 周一宇.
+\newblock 对合成孔径雷达的移频干扰研究\allowbreak[J].
+\newblock 宇航学报, 2006, 27\allowbreak (3): 463-468.
+
+HUANG Hjongxu, HUANG Zhitao, ZHOU Yiyu.
+\newblock A study on the shift-frequency jamming to {SAR}\allowbreak[J].
+\newblock \emph{Journal of Astronautics}, 2006, 27\allowbreak (3): 463-468.
+
+\bibitem{huang2007dhc}
+黄洪旭, 黄知涛, 周一宇.
+\newblock 对合成孔径雷达的随机移频干扰\allowbreak[J].
+\newblock 信号处理, 2007, 23\allowbreak (1): 41-45.
+
+HUANG Hongxu, HUANG Zhitao, ZHOU Yiyu.
+\newblock Randomly-shift-frequency jamming style to {SAR}\allowbreak[J].
+\newblock \emph{Signal Processing}, 2007, 23\allowbreak (1): 41-45.
+
+\bibitem{huang2011dhc}
+黄洪旭, 黄知涛, 吴京, 等.
+\newblock 对合成孔径雷达的步进移频干扰\allowbreak[J].
+\newblock 宇航学报, 2011, 32\allowbreak (4): 898-902.
+
+HUANG Hongxu, HUANG Zhitao, WU Jing, \emph{et~al}.
+\newblock Stepped-shift-frequency jamming to {SAR}\allowbreak[J].
+\newblock \emph{Journal of Astronautics}, 2011, 32\allowbreak (4): 898-902.
+
+\bibitem{liu0SAR}
+刘玉玲.
+\newblock
+  {SAR}有源假目标精确位置欺骗干扰技术研究\allowbreak[D].
+\newblock [硕士论文], 国防科学技术大学, 2012.
+
+\bibitem{cn-liu0SAR}
+LIU Yuling.
+\newblock Research on {SAR} precisely position deception jamming\allowbreak[D].
+\newblock [Master dissertation], National University of Defense Technolog,
+  2012.
+
+\bibitem{wu2010jy}
+吴晓芳, 代大海, 王雪松, 等.
+\newblock 基于微动调制的{SAR}新型有源干扰方法\allowbreak[J].
+\newblock 电子学报, 2010, 38\allowbreak (4): 954-959.
+
+WU Xiaofang, DAI Dahai, WANG Xuesong, \emph{et~al}.
+\newblock A novel method of active jamming for {SAR} based on micro motion
+  modulation\allowbreak[J].
+\newblock \emph{Acta Electronica Sinica}, 2010, 38\allowbreak (4): 954-959.
+
+\bibitem{wu2012SAR}
+吴晓芳, 王雪松, 梁景修.
+\newblock
+  {SAR-GMTI}高逼真匀速运动假目标调制干扰方法\allowbreak[J].
+\newblock 宇航学报, 2012, 33\allowbreak (10): 1472-1479.
+
+WU Xiaofang, WANG Xuesong, LIANG Jingxiu.
+\newblock Modulation jamming method for high-vivid false uniformly-moving
+  targets against {SAR-GMTI}\allowbreak[J].
+\newblock \emph{Journal of Astronautics}, 2012, 33\allowbreak (10): 1472-1479.
+
+\bibitem{wang2006js}
+王雪松, 刘建成, 张文明, 等.
+\newblock 间歇采样转发干扰的数学原理\allowbreak[J].
+\newblock 中国科学（E辑）, 2006, 36\allowbreak (8): 891-901.
+
+WANG Xuesong, LIU Jiancheng, ZHANG Wenming, \emph{et~al}.
+\newblock Mathematical principle of intermittent sampling and forwarding
+  interference\allowbreak[J].
+\newblock \emph{Science in China(Series E)}, 2006, 36\allowbreak (8): 891-901.
+
+\bibitem{wu2010dsar}
+吴晓芳, 柏仲干, 代大海, 等.
+\newblock 对{SAR}的方位向间歇采样转发干扰\allowbreak[J].
+\newblock 信号处理, 2010, 26\allowbreak (1): 2043-2048.
+
+WU Xiaofang, BAI Zhonggan, DAI Dahai, \emph{et~al}.
+\newblock Azimuth intermittent sampling repeater jamming to {SAR}\allowbreak[J].
+\newblock \emph{Signal Processing}, 2010, 26\allowbreak (1): 2043-2048.
+
+\bibitem{hu2002hc}
+胡东辉, 吴一戎.
+\newblock 合成孔径雷达散射波干扰研究\allowbreak[J].
+\newblock 电子学报, 2002, 30\allowbreak (12): 1882-1884.
+
+HU Donghui, WU Yirong.
+\newblock The scatter-wave jamming to {SAR}\allowbreak[J].
+\newblock \emph{Acta Electronica Sinica}, 2002, 30\allowbreak (12): 1882-1884.
+
+\bibitem[{ITU}(2018)]{ITUrg}
+{ITU}.
+\newblock Radio regulations\allowbreak[OL].
+\newblock 2018.
+\newblock \url{https://www.itu.int/en/publica
+  tions/ITU-R/pages/publications.aspx?parent=R-REG-RR-2020&media=electronic}.
+
+\bibitem{taoMitigationRadioFrequency2019}
+TAO Mingliang, SU Jia, HUANG Yan, \emph{et~al}.
+\newblock Mitigation of radio frequency interference in synthetic
+  aperture radar data: current status and future
+  trends\allowbreak[J].
+\newblock \emph{Remote Sensing}, 2019, 11\allowbreak (20): 2438.
+\newblock doi: \doi{10.3390/rs11202438}.
+
+\bibitem{yang2020mutual}
+YANG Huizhang, TAO Mingliang, CHEN Shengyao, \emph{et~al}.
+\newblock On the mutual interference between spaceborne {SARs}: modeling,
+  characterization, and mitigation\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 2020,
+  59\allowbreak (10): 8470-8485.
+
+\bibitem{yang2021bsf}
+YANG Huizhang, LI Kun, LI Jie, \emph{et~al}.
+\newblock {BSF}: block subspace filter for removing narrowband and wideband
+  radio interference artifacts in single-look complex {SAR}
+  images\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 2021, 60: 1-16.
+
+\bibitem{liObservationMitigationMutual2022a}
+LI Ning, LV Zongsen, GUO Zhengwei.
+\newblock Observation and mitigation of mutual {RFI} between {SAR}
+  satellites: a case study between chinese {GaoFen}-3 and European
+  Sentinel-1A\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 2022, 60: 1-19.
+\newblock doi: \doi{10.1109/TGRS.2022.3170363}.
+
+\bibitem{1995Interference}
+FERRELL Bruce~H.
+\newblock Interference suppression in {UHF} synthetic aperture
+  radar\allowbreak[C].
+\newblock Algorithms for Synthetic Aperture Radar Imagery II: Vol. 2487.
+\newblock SPIE, 1995: 96-106.
+
+\bibitem{lord1998approaches}
+LORD R~T, INGGS M~R.
+\newblock Approaches to {RF} interference suppression for {VHF/UHF} synthetic
+  aperture radar\allowbreak[C].
+\newblock Proceedings of the 1998 South African Symposium on Communications and Signal
+  Processing.
+\newblock IEEE, 1998: 95-100.
+
+\bibitem{potsis1999phase}
+POTSIS A, REIGBER A, PAPATHANASSIOU K.~P.
+\newblock A phase preserving method for rf interference suppression in p-band
+  synthetic aperture radar interferometric data\allowbreak[C].
+\newblock 1999 IEEE International Geoscience and Remote Sensing Symposium.
+
+\bibitem{wang2002hc}
+王彦平, 彭海良, 吴一戎, 等.
+\newblock 合成孔径雷达射频干扰抑制的现状及展望\allowbreak[J].
+\newblock 航天电子对抗, 2002\allowbreak (6): 18-24.
+
+WANG Y, PENG H, WU Y, \emph{et~al}.
+\newblock Current status and prospect of {RFI} suppression for {SAR}\allowbreak[J].
+\newblock \emph{Aerospace Electronic Warfare}, 2002\allowbreak (6): 18-24.
+
+\bibitem{zhang2011interference}
+ZHANG Shuangxi, XING Mengdao, GUO Rui, \emph{et~al}.
+\newblock Interference suppression algorithm for {SAR} based on time--frequency
+  transform\allowbreak[J].
+\newblock \emph{IEEE transactions on Geoscience and Remote Sensing}, 2011,
+  49\allowbreak (10): 3765-3779.
+
+\bibitem{li2015efficient}
+LI Dong, LIU Hongqing, YANG Lisheng.
+\newblock Efficient time-varying interference suppression method for synthetic
+  aperture radar imaging based on time-frequency reconstruction and mask
+  technique\allowbreak[J].
+\newblock \emph{IET Radar, Sonar} \& \emph{Navigation}, 2015, 9\allowbreak (7): 827-834.
+
+\bibitem{zhouEigensubspacebasedFilteringApplication2007a}
+ZHOU F, WU R, XING M, \emph{et~al}.
+\newblock Eigensubspace-based filtering with application in narrow-band
+  interference suppression for {{SAR}}\allowbreak[J].
+\newblock \emph{IEEE Geoscience and Remote Sensing Letters}, 2007, 4\allowbreak (1):
+  75-79.
+
+\bibitem{Nguyen2012Robust}
+NGUYEN L~H, TRAN T~D.
+\newblock Robust and adaptive extraction of {RFI} signals from ultra-wideband
+  radar data\allowbreak[C].
+\newblock 2012 IEEE International Geoscience and Remote Sensing Symposium.
+
+\bibitem{Huang2019eff}
+{Huang} Y, {Liao} G, {Zhang} L, \emph{et~al}.
+\newblock Efficient narrowband {RFI} mitigation algorithms for {SAR} systems
+  with reweighted tensor structures\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 2019,
+  57\allowbreak (11): 9396-9409.
+\newblock doi: \doi{10.1109/TGRS.2019.2926440}.
+
+\bibitem{huang2020hc}
+黄岩, 赵博, 陶明亮, 等.
+\newblock 合成孔径雷达抗干扰技术综述\allowbreak[J].
+\newblock 雷达学报, 2020, 9\allowbreak (1): 86-106.
+
+HUANG Yan, ZHAO Bo, TAO Mingliang, \emph{et~al}.
+\newblock Review of synthetic aperture radar interference
+  suppression\allowbreak[J].
+\newblock \emph{Journal of Radars}, 2020, 9\allowbreak (1): 86-106.
+
+\bibitem{yang2020dictionary}
+YANG Huizhang, CHEN Chengzhi, CHEN Shengyao, \emph{et~al}.
+\newblock A dictionary-based {SAR RFI} suppression method via robust {PCA} and
+  chirp scaling algorithm\allowbreak[J].
+\newblock \emph{IEEE Geoscience and Remote Sensing Letters}, 2020, 18\allowbreak (7):
+  1229-1233.
+
+\bibitem{yang2021two}
+YANG Huizhang, HE Yaomin, DU Yanlei, \emph{et~al}.
+\newblock Two-dimensional spectral analysis filter for removal of {LFM} radar
+  interference in spaceborne {SAR} imagery\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 2021, 60: 1-16.
+
+\bibitem{yang2024robust}
+YANG Huizhang, LANG Ping, LU Xingyu, \emph{et~al}.
+\newblock Robust block subspace filtering for efficient removal of radio
+  interference in synthetic aperture radar images\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 2024.
+
+\bibitem{fan2019interference}
+FAN Weiwei, ZHOU Feng, TAO Mingliang, \emph{et~al}.
+\newblock Interference mitigation for synthetic aperture radar based on deep
+  residual network\allowbreak[J].
+\newblock \emph{Remote Sensing}, 2019, 11\allowbreak (14): 1654.
+
+\bibitem{wei2022carnet}
+WEI Shunjun, ZHANG Hao, ZENG Xiangfeng, \emph{et~al}.
+\newblock {CARNet}: an effective method for {SAR} image interference
+  suppression\allowbreak[J].
+\newblock \emph{International Journal of Applied Earth Observation and
+  Geoinformation}, 2022, 114: 103019.
+
+\bibitem{nie2024jy}
+聂林, 韦顺军, 李佳慧, 等.
+\newblock 基于区域特征细化感知学习的星载 SAR
+  图像有源压制干扰抑制方法\allowbreak[J].
+\newblock 雷达学报, 2024, 13\allowbreak (5): 985-1003.
+
+NIE Lin, WEI Shunjun, LI Jiahui, \emph{et~al}.
+\newblock Active blanket jamming suppression method for spaceborne {SAR} images
+  based on regional feature refinement perceptual learning\allowbreak[J].
+\newblock \emph{Journal of Radars}, 2024, 13\allowbreak (5): 985-1003.
+
+\bibitem{ma2007zs}
+马晓岩, 秦江敏, 贺照辉, 等.
+\newblock 抑制 {SAR} 压制性干扰的三通道对消方法\allowbreak[J].
+\newblock 电子学报, 2007, 35\allowbreak (6): 1015-1020.
+
+MA Xiaoyan, QIN Jjiangmin, HE Zhaohui, \emph{et~al}.
+\newblock Three-channel cancellation of {SAR} blanketing jamming
+  suppression\allowbreak[J].
+\newblock \emph{Acta Electronica Sinica}, 2007, 35\allowbreak (6): 1015-1020.
+
+\bibitem{li2008yz}
+李京生, 孙进平, 毛士艺.
+\newblock
+  一种基于{STAP}的多通道{SAR}噪声干扰抑制方法\allowbreak[J].
+\newblock 电光与控制, 2008, 15\allowbreak (12): 18-20.
+
+LI Jingsheng, SUN Jinping, MAO Shiyi.
+\newblock A noise jamming suppression approach for multi-channel {SAR} based on
+  {STAP}\allowbreak[J].
+\newblock \emph{Electronics Optics and Control}, 2008, 15\allowbreak (12): 18-20.
+
+\bibitem{meng2018qs}
+孟智超, 卢景月, 张磊.
+\newblock 前视多通道 {SAR}
+  自适应鉴别抑制欺骗干扰\allowbreak[J].
+\newblock 雷达学报, 2019, 8\allowbreak (1): 82-89.
+
+MENG Zhichao, LU Jingyue, ZHANG Lei.
+\newblock Forward-looking multi-channel {SAR} adaptive identification to suppress
+  deception jamming\allowbreak[J].
+\newblock \emph{Journal of Radars}, 2019, 8\allowbreak (1): 82-89.
+
+\bibitem{zhangsx2014thesis}
+张双喜.
+\newblock
+  高分辨宽测绘带多通道{SAR}和动目标成像理论与方法\allowbreak[D].
+\newblock [博士论文], 西安电子科技大学, 2014.
+
+ZHANG Shuangxi.
+\newblock High-resolution and wide-swath multi-channel {SAR} and moving target
+  imaging theory and methods\allowbreak[D].
+\newblock [Ph.D. dissertation], Xidian University, 2014.
+
+\bibitem{bollian2019adaptive}
+BOLLIAN Tobias, OSMANOGLU Batuhan, RINCON Rafael, \emph{et~al}.
+\newblock Adaptive antenna pattern notching of interference in synthetic
+  aperture radar data using digital beamforming\allowbreak[J].
+\newblock \emph{Remote Sensing}, 2019, 11\allowbreak (11): 1346.
+
+\bibitem{yangDetectionSuppressionNarrow2015}
+YANG Lin, ZHENG Huifang, FENG Jin, \emph{et~al}.
+\newblock Detection and suppression of narrow band {RFI} for synthetic
+  aperture radar imaging\allowbreak[J].
+\newblock \emph{Chinese Journal of Aeronautics}, 2015, 28\allowbreak (4): 1189-1198.
+\newblock doi: \doi{10.1016/j.cja.2015.06.018}.
+
+\bibitem{natsuakiAutocorrelationBasedRadioFrequency2017b}
+NATSUAKI Ryo, MOTOHKA Takeshi, WATANABE Manabu, \emph{et~al}.
+\newblock An autocorrelation-based radio frequency interference detection
+  and removal method in azimuth-frequency domain for {SAR}  image\allowbreak[J].
+\newblock IEEE Journal of Selected Topics in Applied Earth Observations and
+  \emph{Remote Sensing}, 2017, 10\allowbreak (12): 5736-5751.
+\newblock doi: \doi{10.1109/JSTARS.2017.2775205}.
+
+\bibitem{monti-guarnieriIdentificationCBandRadio2017}
+{Monti-Guarnieri} Andrea, GIUDICI Davide, RECCHIA Andrea.
+\newblock Identification of {C}-band radio frequency interferences from
+  {S}entinel-1 data\allowbreak[J].
+\newblock \emph{Remote Sensing}, 2017, 9\allowbreak (11): 1183.
+\newblock doi: \doi{10.3390/rs9111183}.
+
+\bibitem{bollianDetectionGeolocationBand2018}
+BOLLIAN Tobias, OSMANOGLU Batuhan, RINCON Rafael F., \emph{et~al}.
+\newblock Detection and geolocation of {P}-band radio
+  frequency interference using {EcoSAR}\allowbreak[J].
+\newblock \emph{IEEE Journal of Selected Topics in Applied Earth Observations and
+  Remote Sensing}, 2018, 11\allowbreak (10): 3608-3616.
+\newblock doi: \doi{10.1109/JSTARS.2018.2830745}.
+
+\bibitem{natsuakiSimilarityApproachRadio2020}
+NATSUAKI Ryo, JAGER Marc, {Prats-Iraola} Pau.
+\newblock Similarity approach  for radio frequency interference
+  detection  and correction in multi-receiver  {SAR}\allowbreak[C].
+\newblock 2020 IEEE International Geoscience and Remote Sensing Symposium.
+\newblock Waikoloa, HI, USA: IEEE, 2020: 3770-3773.
+
+\bibitem{lvTwoStepApproachPulse2021b}
+LV Zongsen, ZHANG Hengrui, LI Ning, \emph{et~al}.
+\newblock A two-step approach for pulse {RFI} detection in {SAR}
+  data\allowbreak[C].
+\newblock 2021 {{IEEE Sensors}}.
+\newblock Sydney, Australia: IEEE, 2021: 1-4.
+
+\bibitem{lengRadioFrequencyInterference2021}
+LENG Xiangguang, JI Kefeng, KUANG Gangyao.
+\newblock Radio frequency interference detection  and localization  in
+  {S}entinel-1 images\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 2021: 1-12.
+\newblock doi: \doi{10.1109/TGRS.2021.3049472}.
+
+\bibitem{liPulseRFIMitigation2022a}
+LI Ning, LV Zongsen, GUO Zhengwei.
+\newblock Pulse {RFI} mitigation in synthetic aperture radar data via a
+  three-step approach: location, notch, and recovery\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 2022, 60.
+\newblock doi: \doi{10.1109/TGRS.2022.3161368}.
+
+\bibitem{huangRadioFrequencyInterference2023}
+HUANG Bo, FATTAHI Heresh, GHAEMI Hirad, \emph{et~al}.
+\newblock Radio frequency interference detection and mitigation of
+  {NISAR} data using slow time eigenvalue
+  decomposition\allowbreak[C].
+\newblock 2023 {{IEEE International Geoscience}} and {{Remote Sensing Symposium}}.
+\newblock Pasadena, CA, USA: IEEE, 2023: 5479-5482.
+
+\bibitem{10841461}
+YANG Huizhang, LANG Ping, HE Yaomin, \emph{et~al}.
+\newblock Lambda-1 detector: adaptive interference detection in synthetic
+  aperture radar images\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 2025, 63: 1-13.
+\newblock doi: \doi{10.1109/TGRS.2025.3529623}.
+
+\bibitem{yuMulticlassRadioFrequency2018}
+YU  Junfei, LI Jingwen, SUN Bing, \emph{et~al}.
+\newblock Multiclass radio frequency interference detection  and
+  suppression for  {SAR} based  on the single shot multibox
+  detector\allowbreak[J].
+\newblock \emph{Sensors}, 2018, 18\allowbreak (11): 4034.
+\newblock doi: \doi{10.3390/s18114034}.
+
+\bibitem{artiemjewDeepLearningRFI2021a}
+ARTIEMJEW  Piotr, CHOJKA Agnieszka, RAPINSKI Jacek.
+\newblock Deep learning  for {RFI} artifact recognition  in  {S}entinel-1
+  data\allowbreak[J].
+\newblock \emph{Remote Sensing}, 2021, 13\allowbreak (1).
+\newblock doi: \doi{10.3390/rs13010007}.
+
+\bibitem{taoRadioFrequencyInterference2021}
+TAO Mingliang, TANG Shuting, LI Jieshuang, \emph{et~al}.
+\newblock Radio frequency interference detection for {SAR} data using
+  spectrogram-based semantic network\allowbreak[C].
+\newblock 2021 IEEE International Geoscience and Remote Sensing Symposium IGARSS.
+\newblock Brussels, Belgium: IEEE, 2021: 1662-1665.
+
+\bibitem{liSemanticCognitionEnhancment2021a}
+LI Jieshuang, TAO Mingliang, ZHANG Xiang, \emph{et~al}.
+\newblock A semantic cognition enhancment network for interference detection  in
+  {Sentinel-1 SAR} image\allowbreak[C].
+\newblock 2021 CIE International Conference on Radar.
+
+\bibitem{luAutomaticRFIIdentification2022}
+LU Xingyu, WANG Chenchen, XU Xiaofeng, \emph{et~al}.
+\newblock Automatic {RFI} identification for {S}entinel-1 based on
+  siamese-type deep {CNN} using repeat-pass images\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 2022, 60: 1-16.
+\newblock doi: \doi{10.1109/TGRS.2022.3190488}.
+
+\bibitem{taoRadioFrequencyInterference2022b}
+TAO Mingliang, LI Jieshuang, CHEN Junli, \emph{et~al}.
+\newblock Radio frequency interference signature detection in radar
+  remote sensing image using semantic cognition enhancement
+  network\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 2022, 60.
+\newblock doi: \doi{10.1109/TGRS.2022.3190288}.
+
+\bibitem{cenSelfSupervisedLearningMethod2023}
+CEN Xi, LI Yachao, HAN Zhaoyun, \emph{et~al}.
+\newblock Self-supervised learning method  for {SAR} multi-interference
+  suppression\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 2023, 61: 1-17.
+\newblock doi: \doi{10.1109/TGRS.2023.3328019}.
+
+\bibitem{zhaoIntelligentDetectionSegmentation2023a}
+ZHAO Jiayi, WANG Yongliang, LIAO Guisheng, \emph{et~al}.
+\newblock Intelligent detection  and  segmentation of  space-borne {SAR}
+  radio frequency interference\allowbreak[J].
+\newblock \emph{Remote Sensing}, 2023, 15\allowbreak (23).
+\newblock doi: \doi{10.3390/rs15235462}.
+
+\bibitem{sorensenRADIOFREQUENCYINTERFERENCE2023a}
+SORENSEN K. Aa, HEISELBERG P, KUSK A, \emph{et~al}.
+\newblock Radio frequency interference  in  synthetic aperture radar
+  Images\allowbreak[C].
+\newblock 2023 IEEE International Geoscience and Remote Sensing Symposium.
+
+
+\bibitem{s20102919}
+CHOJKA Agnieszka, ARTIEMJEW Piotr, RAPInSKI Jacek.
+\newblock {RFI} artefacts detection in sentinel-1 level-1 {SLC} data based on
+  image processing techniques\allowbreak[J].
+\newblock \emph{Sensors}, 2020, 20\allowbreak (10).
+\newblock doi: \doi{10.3390/s20102919}.
+
+\bibitem{Dan2018}
+DAN Harel.
+\newblock X marks the spot: Identifying {MIM}-104 {P}atriot batteries from
+  {Sentinel}-1 {SAR} multi temporal imagery\allowbreak[OL].
+\newblock \url{https://medium.com/@HarelDan/x-marks-the-spot-579cdb1f534b}.
+
+\bibitem{liSimultaneousScreeningDetection2022}
+LI Ning, ZHANG Hengrui, LV Zongsen, \emph{et~al}.
+\newblock Simultaneous screening and detection  of {RFI} from massive
+  {SAR} images: A case study on European Sentinel-1\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 2022, 60: 1-17.
+\newblock doi: \doi{10.1109/TGRS.2022.3191815}.
+
+\bibitem{taoExtractionMitigationRadio2022a}
+TAO Mingliang, LAI Siqi, LI Jieshuang, \emph{et~al}.
+\newblock Extraction and mitigation of  radio frequency interference
+  artifacts based on time-series Sentinel-1 {SAR} data\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 2022, 60:1-11.
+\newblock doi: \doi{10.1109/TGRS.2021.3126485}.
+
+\bibitem{tau2024jy}
+陶臣嵩, 陈思伟, 肖顺平.
+\newblock 基于深度学习模型的 {SAR}
+  图像间歇采样转发干扰检测\allowbreak[J].
+\newblock 系统工程与电子技术, 2023, 45\allowbreak (11): 3465-3473.
+
+TAO Chensong, CHEN Siwei, XIAO Shunping.
+\newblock {SAR} image interrupted sampling repeater jamming detection based on
+  deep learning models\allowbreak[J].
+\newblock \emph{Systems Engineering and Electronics}, 2023, 45\allowbreak (11):
+  3465-3473.
+
+\bibitem{zhang2024dj}
+张皓宇, 全斯农, 田元荣, 等.
+\newblock 多阶段联合的 {SAR}
+  图像灵巧压制干扰检测方法\allowbreak[J].
+\newblock 雷达科学与技术, 2024, 22\allowbreak (4): 377-384.
+
+ZHANG Haoyu, QUAN Sinong, TIAN Yuanrong, \emph{et~al}.
+\newblock A detection method for multi⁃stage joint {SAR} images dexterous
+  suppression jamming\allowbreak[J].
+\newblock \emph{Radar Science and Technology}, 2024, 22\allowbreak (4): 377-384.
+
+\bibitem{chan1998noniterative}
+CHAN Hian Lim, YEO Tat Soon.
+\newblock Noniterative quality phase-gradient autofocus ({QPGA}) algorithm for
+  spotlight {SAR} imagery\allowbreak[J].
+\newblock \emph{IEEE Transactions on Geoscience and Remote Sensing}, 1998,
+  36\allowbreak (5): 1531-1539.
+
+\bibitem{shannon1948mathematical}
+SHANNON C~E.
+\newblock A mathematical theory of communication\allowbreak[J].
+\newblock \emph{The Bell System Technical Journal}, 1948, 27\allowbreak (3): 379-423.
+
+\bibitem{bocker1991new}
+BOCKER Richard P., HENDERSON Thomas B., JONES Scott A., \emph{et~al}.
+\newblock New inverse synthetic aperture radar algorithm for translational
+  motion compensation\allowbreak[C].
+\newblock Stochastic and Neural Methods in Signal Processing, Image Processing, and
+  Computer Vision: Vol. 1569.
+\newblock SPIE, 1991: 298-310.
+
+\bibitem{chen2021motion}
+CHEN Jianlai, XING Mengdao, YU Hanwen, \emph{et~al}.
+\newblock Motion compensation/autofocus in airborne synthetic aperture radar: a
+  review\allowbreak[J].
+\newblock \emph{IEEE Geoscience and Remote Sensing Magazine}, 2021, 10\allowbreak (1):
+  185-206.
+
+\bibitem{yangj2020book}
+杨健, 殷君君.
+\newblock 极化雷达理论与遥感应用\allowbreak[M].
+\newblock 科学出版社, 2020.
+
+YANG Jian, YIN Junjun.
+\newblock Theory and remote sensing application of polarimetric  radar\allowbreak[M].
+\newblock Science Press, 2020.
+
+\bibitem{qiu2021sarmv3d}
+仇晓兰, 焦泽坤, 彭凌霄, 等.
+\newblock SARMV3D-1.0: SAR 微波视觉三维成像数据集\allowbreak[J].
+\newblock 雷达学报, 2021, 10\allowbreak (4): 485-498.
+
+QIU Xiaolan, JIAO Zekun, PENG Lingxiaoling, \emph{et~al}.
+\newblock {SARMV3D}-1.0: Synthetic aperture radar microwave vision {3D} imaging
+  dataset\allowbreak[J].
+\newblock \emph{Journal of Radars}, 2021, 10\allowbreak (4): 485-498.
+
+\end{thebibliography}

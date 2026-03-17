@@ -1,0 +1,98 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{TXXB20260123004}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=d6d90d1e118ffaec63ee17f9251e9ed5}{%
+           family={陈霄},
+           familyi={陈\bibinitperiod}}}%
+        {{hash=d298e76036651ffd0e7c0316ce076f8d}{%
+           family={沙乐天},
+           familyi={沙\bibinitperiod}}}%
+        {{hash=6a72e2ba0ba8b3cbd675bc3ecf5b7b41}{%
+           family={潘家晔},
+           familyi={潘\bibinitperiod}}}%
+        {{hash=c90a81e4c270a53e0b1e6e4623623313}{%
+           family={孙瑞},
+           familyi={孙\bibinitperiod}}}%
+        {{hash=5d8d914d6cc5834c46f42490747cb2af}{%
+           family={董建阔},
+           familyi={董\bibinitperiod}}}%
+        {{hash=326b17514fc39aa6fb83d27cb7521b33}{%
+           family={肖甫},
+           familyi={肖\bibinitperiod}}}%
+      }
+      \name{namea}{6}{}{%
+        {{hash=d6d90d1e118ffaec63ee17f9251e9ed5}{%
+           family={陈霄},
+           familyi={陈\bibinitperiod}}}%
+        {{hash=d298e76036651ffd0e7c0316ce076f8d}{%
+           family={沙乐天},
+           familyi={沙\bibinitperiod}}}%
+        {{hash=6a72e2ba0ba8b3cbd675bc3ecf5b7b41}{%
+           family={潘家晔},
+           familyi={潘\bibinitperiod}}}%
+        {{hash=c90a81e4c270a53e0b1e6e4623623313}{%
+           family={孙瑞},
+           familyi={孙\bibinitperiod}}}%
+        {{hash=5d8d914d6cc5834c46f42490747cb2af}{%
+           family={董建阔},
+           familyi={董\bibinitperiod}}}%
+        {{hash=326b17514fc39aa6fb83d27cb7521b33}{%
+           family={肖甫},
+           familyi={肖\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \strng{namehash}{9bef361a7e38ef79084dc05677f76531}
+      \strng{fullhash}{7ab5e83b402720c6f459403400ebaf88}
+      \strng{fullhashraw}{7ab5e83b402720c6f459403400ebaf88}
+      \strng{bibnamehash}{496b2059c132ce656c97085307a92712}
+      \strng{authorbibnamehash}{496b2059c132ce656c97085307a92712}
+      \strng{authornamehash}{9bef361a7e38ef79084dc05677f76531}
+      \strng{authorfullhash}{7ab5e83b402720c6f459403400ebaf88}
+      \strng{authorfullhashraw}{7ab5e83b402720c6f459403400ebaf88}
+      \strng{nameabibnamehash}{496b2059c132ce656c97085307a92712}
+      \strng{nameanamehash}{9bef361a7e38ef79084dc05677f76531}
+      \strng{nameafullhash}{7ab5e83b402720c6f459403400ebaf88}
+      \strng{nameafullhashraw}{7ab5e83b402720c6f459403400ebaf88}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1000-436X}
+      \field{journaltitle}{通信学报}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{title}{CIDefuse：融合数据流分析与语义嵌入的命令注入漏洞检测系统}
+      \field{usera}{J}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{pages}{1\bibrangedash 18}
+      \range{pages}{18}
+      \keyw{TXXB20260123004}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

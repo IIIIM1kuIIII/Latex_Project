@@ -1,0 +1,72 @@
+\documentclass{ctexart}
+
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{amsmath} 
+
+\title{离散数学笔记}
+\author{杨子颉}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{命题逻辑}
+    \subsection{命题符号化及连接词}
+        \subsubsection{命题的概念}
+        命题有两个要求，1、是表达判断的陈述句，2、是具有唯一真值。
+        \subsubsection{命题的联结词}
+        非p：$\neg p$，读作“非p”，当p为真时$\neg p$为假，当p为假时$\neg p$为真。（数电的非）
+
+        p且q：$p \wedge q$，读作“p且q”，当p和q都为真时$p \wedge q$为真，否则为假。（数电的与）
+
+        p或q：$p \vee q$，读作“p或q”，当p和q至少有一个为真时$p \vee q$为真，否则为假。（数电的或）\textbf{相容或}：两件事可同时发生，可以用$\vee$表示；\textbf{排斥或}：两件事不可同时发生，\textbf{不可用$\vee$表示}
+
+        p蕴含q：$p \rightarrow q$，读作“p蕴含q”，当p为真且q为假时$p \rightarrow q$为假，否则为真。举例：p为蛋黄，q为蛋白，若p则q时。若我吃蛋黄则一定吃到蛋白。$p\leftrightarrow q$前真后假为假
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.5\textwidth]{Figure/若p则q.png}
+            \caption{蕴含关系}
+        \end{figure}
+
+        p等价于q：$p \leftrightarrow q$，读作“p等价于q”，当p和q具有相同的真值时$p \leftrightarrow q$为真，否则为假。（数电的同或）。注意，真值等价则命题等价，与命题内容无关。
+
+        \subsection{命题公式及分类}
+            \subsubsection{命题公式的分类}
+            命题公式不是公式，其真值是不确定的
+
+            合式公式：
+            \begin{itemize}
+                \item[1)]由命题变元和联结词或括号进行一定连接的叫合式公式
+                \item[2)]性质：
+                    \begin{itemize}
+                        \item[(1)] 若括号不影响运算次序的时候可以将括号省去
+                        \item[(2)] 合式公式和联结词组成的公式还是合式公式
+                        \item[(3)] 如果一个公式在各种赋值下都为真，则为永真式，反之永假式。有真有假为可满足式    
+                    \end{itemize}
+                    若括号不影响运算次序的时候可以将括号省去 
+            \end{itemize}
+
+            \subsubsection{构造真值表}
+
+            \subsubsection{等值演算}
+            如果两个命题公式的真值表完全相等，那么这俩就是等值式。
+
+            若等价式$A\leftrightarrow B$是重言式，那么A和B称为等值式，记作$A\Leftrightarrow B$
+            等值演算的性质
+            \begin{itemize}
+                \item[1)]双重否定为肯定：$A \Leftrightarrow \neg \neg A$
+                \item[2)]幂等律：$A\Leftrightarrow A\vee A,A\Leftrightarrow A\wedge A$
+                \item[3)]交换律：$A\vee B \Leftrightarrow B \vee A$
+                \item[4)]分配律 ：$A\vee(B\wedge C)\Leftrightarrow (A\vee B)\wedge(A\vee C)$ 记作$(A+B)*(A+C)$，$A\wedge(B\vee C)\Leftrightarrow (A \wedge B)\vee(A\wedge C)$记作$A*(B+C) = AB+AC$
+                \item[5)]吸收律：$A\vee (A\wedge B)\Leftrightarrow A$，$A\wedge(A\vee B)\Leftrightarrow A$
+                \item[6)]蕴含等值式：$A\rightarrow B\Leftrightarrow \neg A\vee B$，箭头变或，前件加非 
+            \end{itemize}
+        
+
+
+
+\end{document}

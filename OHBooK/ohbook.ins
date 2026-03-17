@@ -1,0 +1,18 @@
+% ohbook.ins
+\input docstrip
+
+\askforoverwritefalse%默认覆盖
+\keepsilent          %静默模式
+
+\usedir{tex/latex/ohbook}
+
+\preamble
+This is a generated file of ohbook.cls.
+...
+\endpreamble
+
+\generate{
+  \file{\jobname.cls}{\from{\jobname.dtx}{cls}}
+}
+
+\endbatchfile

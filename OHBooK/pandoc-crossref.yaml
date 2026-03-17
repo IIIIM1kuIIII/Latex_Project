@@ -1,0 +1,21 @@
+# pandoc-crossref.yaml
+# 启用章节编号
+chapters: true
+numberSections: false
+sectionsDepth: 2       # 控制编号深度，1为只编号顶层章节，2可编号子章节
+chaptersDepth: 1       # 用于章节编号，决定图号的前缀取哪个级别
+figureTitle: "图"
+tableTitle: "表"
+titleDelim: " "         # 标题编号与说明之间的分隔符
+# 图表编号方案
+figLabels: "arabic"     # 图号使用阿拉伯数字
+tblLabels: "arabic"
+equationTitle: "式"
+listingTitle: "代码"
+
+figPrefix: "图"
+tblPrefix: "表"
+eqnPrefix: "式"
+lstPrefix: "代码"
+
+

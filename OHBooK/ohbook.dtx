@@ -1,0 +1,223 @@
+% \iffalse
+%<*driver>
+\ProvidesFile{ohbook.dtx}[2025/12/08 v1.0 OpenHarmony Book Template]
+\documentclass{ltxdoc}
+
+% 中文支持
+\usepackage{fontspec}
+\usepackage{xeCJK}
+
+% 英文字体
+\setmainfont{Times New Roman}
+
+% 中文字体设置
+\setCJKmainfont{SimSun} % 或者 Songti SC, Noto Serif CJK SC
+\setCJKsansfont{SimHei}
+\setCJKmonofont{FangSong}
+
+\EnableCrossrefs
+\CodelineIndex
+
+\begin{document}
+  \DocInput{\jobname.dtx}
+\end{document}
+%</driver>
+% \fi
+% \section{文档说明部分}
+% 
+% 本 dtx 文件用于生成 ohbook.cls，用于开源鸿蒙书籍排版。
+% 模板基于 ctexbook，支持中文结构清晰。
+%
+% 由 ohbook.ins 生成 ohbook.cls：
+%     latex ohbook.ins
+%    
+% 使用方式：
+%    \begin{macrocode}
+%     \documentclass{ohbook}
+%     \booksetup{
+%       title     = {书名示例},
+%       subtitle  = {子标题示例},
+%       author    = {作者姓名},
+%       publisher = {出版社名称},
+%       date      = {2025年1月}
+%     }
+%     \begin{document}
+%     \chapter{绪论}
+%     \end{document}
+%    \end{macrocode}
+% \section{实现细节}
+% 
+% \subsection{基本信息}
+% \iffalse
+%<*cls>
+% \fi
+%    \begin{macrocode}
+%<cls>\NeedsTeXFormat{LaTeX2e}[2017/04/15]
+%<cls>\ProvidesClass{ohbook}
+%<cls>[2025/12/08 v1.0 OpenHarmony Book]
+%    \end{macrocode}
+% \subsection{基于 ctexbook}
+%    \begin{macrocode}
+\LoadClass[zihao=5,openright]{ctexbook}
+%    \end{macrocode}
+% \subsection{页面设置}  
+%    \begin{macrocode}
+\RequirePackage{indentfirst}  % 章节标题后首段缩进
+\RequirePackage{setspace}     % 行距控制
+\RequirePackage{geometry}     % 页面尺寸
+\RequirePackage{fancyhdr}     % 页眉页脚
+\pagestyle{empty}             % 取消所有页眉页脚
+%    \end{macrocode}
+% 页面边距
+%    \begin{macrocode}
+\geometry{
+    a4paper,
+    left=3.18cm,
+    right=3.18cm,
+    top=2.54cm,
+    bottom=2.54cm
+}
+%    \end{macrocode}
+% 段落设置
+%    \begin{macrocode}
+\setlength{\parskip}{0.5em}   % 段落间距
+\setlength{\parindent}{2em}   % 首行缩进
+\setstretch{1.5}              % 1.5 倍行距
+%    \end{macrocode}    
+% \subsection{中英文字体设置}
+%    \begin{macrocode}
+\RequirePackage{fontspec}
+\RequirePackage{xeCJK}
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+\setmonofont{Courier New}
+\setCJKmainfont{SimSun}
+\setCJKsansfont{SimHei}
+\setCJKmonofont{FangSong}
+%    \end{macrocode}
+% \subsection{超链接设置}
+%    \begin{macrocode}
+\RequirePackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue
+}
+%    \end{macrocode}
+% \subsection{图片、浮动体与标题}
+%    \begin{macrocode}
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\RequirePackage{caption}
+\captionsetup{
+  labelsep=space,
+  labelformat=simple
+}
+%    \end{macrocode}
+% \subsection{表格样式}
+%    \begin{macrocode}
+\RequirePackage{subcaption}
+\RequirePackage{booktabs}
+\RequirePackage{xcolor}
+\RequirePackage{makecell}
+\RequirePackage{colortbl}
+\RequirePackage{longtable}
+%    \end{macrocode}
+% \subsection{列表环境}
+%    \begin{macrocode}
+\RequirePackage{enumitem}
+\newlist{myenum}{enumerate}{3}
+\setlist[myenum]{
+  label=(\arabic*),
+  leftmargin=2em,
+  labelsep=0.5em,
+  itemsep=3pt,
+  parsep=0pt,
+  topsep=5pt,
+  partopsep=0pt
+}
+\newlist{myitem}{itemize}{2}
+\setlist[myitem]{
+  label=•,
+  leftmargin=1.5em,
+  itemsep=0pt,
+  parsep=0pt,
+  topsep=0pt,
+  partopsep=0pt
+}
+%    \end{macrocode}
+% \subsection{代码高亮（listings）}
+%    \begin{macrocode}
+\RequirePackage{underscore}
+\RequirePackage{listings}
+\RequirePackage{xcolor}
+\lstset{
+    language=C,
+    basicstyle=\tt,
+    numbers=left,
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    escapeinside=``,
+    xleftmargin=2em, xrightmargin=2em,
+    aboveskip=1em,
+    framexleftmargin=1.2mm,
+    frame=shadowbox,
+    backgroundcolor=\color[RGB]{245,245,244},
+    keywordstyle=\color{blue}\bfseries,
+    identifierstyle=\bf,
+    numberstyle=\color[RGB]{0,192,192},
+    commentstyle=\it\color[RGB]{96,96,96},
+    stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},
+    showstringspaces=false,
+    tabsize=4,
+    breaklines=true,
+    breakatwhitespace=true,
+    columns=fullflexible
+}
+%    \end{macrocode}
+% \subsection{章节标题}
+%    \begin{macrocode}
+\RequirePackage{titlesec}
+%    \end{macrocode}
+% -----------------chapter-----------------
+%    \begin{macrocode}
+\titleformat{\chapter}[hang]
+  {\centering\bfseries\fontsize{22pt}{22pt}\selectfont}
+  {单元\thechapter}
+  {0.2em}
+  {}
+\titlespacing*{\chapter}
+  {0pt}{-30pt}{0.5\baselineskip}
+%    \end{macrocode}
+% -----------------section-----------------
+%    \begin{macrocode}
+\renewcommand{\thesection}{\chinese{section}}
+\titleformat{\section}[hang]
+  {\centering\bfseries\fontsize{16pt}{16pt}\selectfont}
+  {任务\thesection}
+  {0.2em}
+  {}
+\titlespacing*{\section}
+  {0pt}{13pt}{0.5\baselineskip}
+%    \end{macrocode}
+% -----------------subsection-----------------
+%    \begin{macrocode}
+\titleformat{\subsection}[hang]
+  {\bfseries\fontsize{10.5pt}{10.5pt}\selectfont}
+  {\chinese{subsection}、}
+  {0.2em}
+  {}
+\titlespacing*{\subsection}
+  {0pt}{0pt}{0.5\baselineskip}
+%    \end{macrocode}
+% \subsection{参考文献支持}
+% 使用 biblatex + GB/T 7714 中文文献样式
+%    \begin{macrocode}
+\RequirePackage[backend=biber,style=gb7714-2015,gbpub=false]{biblatex} 
+\newcommand{\addbibresourcecmd}[1]{\addbibresource{#1}}   % 加载 bib 文件
+\newcommand{\printbibliographycmd}{\printbibliography}     % 打印参考文献
+%    \end{macrocode}   
+% \iffalse
+%</cls>
+% \fi
+% \subsection{文档结束}
+% \Finale

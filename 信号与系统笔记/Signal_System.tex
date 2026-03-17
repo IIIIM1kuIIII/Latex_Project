@@ -1,0 +1,128 @@
+\documentclass{ctexart}
+
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{tcolorbox}
+
+\title{信号与系统笔记}
+\author{杨子颉}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{典型的信号}
+    \subsection{信号的描述与分类}
+        \subsubsection{基于信号的维度}
+            基于信号的维度：一维、二维.....（本书只讨论一维）
+        \subsubsection{一维信号的两种形式}
+            连续信号$x(t)$和离散信号$x[n]$
+        \subsubsection{周期信号和非周期信号}
+            \begin{itemize}
+                \item[1)]周期信号定义： 信号随时间变量t或n变化，具有重复性
+                \item[2)]周期信号的表示方法：
+                
+                \begin{tcolorbox}[colback=blue!5!white]
+                \item 连续信号：$x(t)=x(t+mT)(m\in \mathbb{R})$
+                
+                \item 离散信号：$x[n]=x[n+mN],(m\in \mathbb[Z])$ 
+                
+                \item 两个周期信号若周期之比为有理数则相加后仍是周期信号，周期为$T_1$、$T_2$的最小公倍数
+                \end{tcolorbox}
+                \item[3)]非周期信号：不具有周期性的信号
+            \end{itemize}
+
+        \subsubsection{功率信号}
+
+        \subsubsection{因果与非因果信号}
+            因果信号：$t>0$
+        \subsubsection{奇信号与偶信号}
+            \begin{itemize}
+                \item[1)]   偶信号：关于原点为轴，翻转后保持不变，通常有$x(-t)=x(t)$
+                \item[2)]   奇信号：关于以$y$轴为轴翻转后有$x(-t)=-x(t)$则称为偶信号 
+            \end{itemize}
+    \subsection{信号的基本运算}
+            \subsubsection{相加相乘}
+                \textbf{同一时刻}俩信号的值对应值(纵坐标）相加或相乘（实现调幅或调频） 
+            \subsubsection{翻转、平移和展缩（只对$t$做变换）}
+                \begin{itemize}
+                    \item[1)]翻转：$f(t)\rightarrow f(-t)$
+                    \item[2)]平移（时移）：$f(t) \rightarrow f(t\pm t_0)$（口诀：左加右减）
+                    \item[3)]展缩（尺度变换）：$f(t)\rightarrow f(at)$ 
+                        \subitem $a>1$压缩
+                        \subitem $0<a<1$放大\subitem \textbf{离散信号一般不做展缩变化}
+                    \item[4)]变换的时候建议\textbf{先平移再翻转后展缩}，不需要变号 
+                \end{itemize}
+            \subsubsection{积分和微分的作用}
+                微分：突出变化的部分（冲激函数）
+
+                积分：模糊突出部分，可以削弱噪声的影响
+            \subsubsection{差分和迭分（离散没法积分微分）}
+                \begin{itemize}
+                    \item[1)] 差分
+                    \subitem 前向差分：$\bigtriangleup f(n)=f(n+1)-f(n)$
+                    \subitem 后向差分：$\bigtriangledown f(n)=f(n)-f(n-1)$
+                    \subitem 前向差分都是非因果
+                    \item[2)] 迭分：如公式（1），迭分实际上是对离散信号进行累加
+                    \begin{equation}
+                        y(k)=\sum_{n = -\infty}^{k} f(n) 
+                    \end{equation}
+                \end{itemize}
+        \subsection{几个重要信号}
+            \subsubsection{连续时间信号}
+                \begin{itemize}
+                    \item[1)] 实指数信号:$f(t)=Ke^{at},\tau = \frac{1}{\left\lvert a \right\rvert }$,$\tau$是指数的时间常数，$\tau$越大表示增长或衰减的越慢
+                    \item[2)] 正弦信号
+                    \item[3)] 虚指数信号
+                    \item[4)] 抽样信号$\displaystyle Sa(t)=\frac{sint}{t}$ 
+                        \subitem 当t=0时$Sa(0)=1$
+                        \subitem 当$t=\pm \pi,...,\pm n\pi$时$Sa(t)=0$
+                    \item[5)] 高斯函数
+                \end{itemize}
+            \subsubsection{阶跃信号}
+                    \begin{itemize}
+                        \item[单位阶跃：]
+                        \begin{equation*}
+                            \epsilon (t)=\lim_{\Delta \rightarrow 0}\epsilon_\Delta (t)
+                        \end{equation*}
+                            \item[时移阶跃：]
+                        \begin{equation*}
+                                f(t)\rightarrow af(t-t_0)
+                        \end{equation*}
+                        \item[1)] 阶跃函数的性质
+                            \begin{itemize}
+                            \item[(1)] 简化某些函数的表示
+                                \begin{itemize}
+                                    \item 上升：+
+                                    \item 幅度
+                                    \item 转折点
+                                    \item 例题：$f(t)=\epsilon (t+1)+\epsilon (t-1) -3\epsilon (t-2)+\epsilon(t-4)$
+                                \end{itemize}
+                        \item[(2)] 倒置：$f(t)\rightarrow -f(t)$
+                        \item[(3)] 加权、数乘 $f(t)\rightarrow af(t)$
+                        \item[(4)]  表示信号的作用区间（参考简化的例题得到一段为1的函数）$f(t)=[\epsilon (t-t_1)-\epsilon (t-t_2)]$起点-终点
+                        \item[(5)] 积分：$\int_{-\infty}^{t} \epsilon (\tau)d\tau =t\epsilon (t)$
+                        \item[(6)]  微分：$\frac{d\epsilon (t)}{dt}=\delta (t)$ 
+                        \item[(7)]r(t)求微分 得到阶跃，阶跃求微分得到冲激函数  
+                        \end{itemize}
+                        \item[2)] 冲激信号
+                            \begin{itemize}
+                                \item[(1)] $\displaystyle \delta(t) =\int_{-\infty}^{\infty}\delta (t)dt=1$ 当且仅当t落在积分区间内才有意义，由此得出推导公式：
+                                \begin{equation*}
+                                    \delta (t)=\int_{-\infty}^{\infty}\delta(t-t_0)dt=A
+                                \end{equation*}
+                                \item[(2)] 冲激偶函数$\delta'(t)$：奇函数（图后面补），冲激函数为偶函数
+                                \item[(3)] 广义函数（奇异函数）：（手机上，后面补） 
+                                \item[(4)] 加权特性：$f(t)\delta (t)=f(0)\delta (t)$，$f(0)$为有效点，拓展为$f(t)\delta (t-t_0)=f(t_0)\delta(t-t_0)$ 
+                                \item[(5)] 筛选特性：$\int_{-\infty}^{\infty}f(t)\delta(t-t_0)dt=f(t_0)$
+                                
+                                $\int_{-\infty}^{\infty}f(t)\delta(t)dt=f(0)\int_{-\infty}^{\infty}\delta(t)dt=f(0)$，积分区间外为0
+                                \item[(6)] 尺度变换 $\delta(at)=\frac{1}{|a|}\delta(t)$ 
+                            \end{itemize}
+                        
+                    \end{itemize}
+        
+
+\end{document}
