@@ -76,7 +76,29 @@
         \begin{equation}
             C_n^m=C_n^{n-m}
         \end{equation}
-    \subsection{频率与概率}
+    \subsection{概率的性质}
+        \begin{itemize}
+            \item[1)] $P(\varnothing )=0$不可能发生的事件概率为0，反之不成立，即概率为0的事件有可能发生
+            \item[2)] 有限可加：
+            
+            若AB互不相容则有
+            \begin{equation}
+                P(A+B)=P(A)+P(B)
+            \end{equation}
+
+            反之则有
+            \begin{equation}
+                P(A+B)=P(A)+P(B)-P(AB)\Rightarrow P(AB)=0\nRightarrow AB=\varnothing
+            \end{equation}
+
+            即概率为0的事件有可能发生，故不能推出AB为不可能事件
+
+            \item[3)] $P(\bar{A})=1-P(A)$，$P(A)+P(\bar(A))=1$
+            \item[4)] $A\supset B\Rightarrow P(A-B)=P(A)-P(B)$且$P(A)\geqslant P(B)$
+            
+            对任意事件来说都有$P(A-B)=P(A)-P(AB)$
+            \item[5)] $P(A\cup B)=P(A)+P(B)-P(AB)$
+        \end{itemize}
 
 
 \end{document}

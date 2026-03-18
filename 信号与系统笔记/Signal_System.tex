@@ -76,22 +76,45 @@
                     \item[1)] 实指数信号:$f(t)=Ke^{at},\tau = \frac{1}{\left\lvert a \right\rvert }$,$\tau$是指数的时间常数，$\tau$越大表示增长或衰减的越慢
                     \item[2)] 正弦信号
                     \item[3)] 虚指数信号
-                    \item[4)] 抽样信号$\displaystyle Sa(t)=\frac{sint}{t}$ 
+                    \item[4)] 抽样信号$\displaystyle Sa(t)=\frac{sint}{t}$其严格定义如下
+                    $$Sa(t)=
+                    \begin{cases}
+                        1 & t=0\\
+                       \displaystyle \frac{sin(t)}{t} & t\neq 0
+                    \end{cases}
+                    $$
                         \subitem 当t=0时$Sa(0)=1$
                         \subitem 当$t=\pm \pi,...,\pm n\pi$时$Sa(t)=0$
+                        \subitem Sa是一个偶函数,奇函数除奇函数为偶函数
+                        \subitem 抽样函数的性质
+                            \begin{equation}
+                                \int_{0}^{\infty} Sa(t)dt=\frac{\pi}{2}
+                            \end{equation}
+                            \begin{equation}
+                                \int_{-\infty}^{\infty} Sa(t)dt=\pi
+                            \end{equation}
                     \item[5)] 高斯函数
                 \end{itemize}
             \subsubsection{阶跃信号}
-                    \begin{itemize}
-                        \item[单位阶跃：]
+                \begin{itemize}   
+                    \item[1)] 单位阶跃：
+                    \begin{equation}\epsilon(t)=
+                        \begin{cases}
+                            0 & t<0\\
+                            1 & t>0\\
+                        \end{cases}
+                    \end{equation}
+                        在跳变点$t=0$处无定义，但$\epsilon(0)$可以等于任意值，第二章会证明
+                        \begin{figure}[h]
+                            \centering
+                            \includegraphics[width=0.4\textwidth]{Figure/阶跃函数.png}
+                            \caption{单位阶跃函数}
+                        \end{figure}
+                            \item[2)] 时移阶跃：
                         \begin{equation*}
-                            \epsilon (t)=\lim_{\Delta \rightarrow 0}\epsilon_\Delta (t)
+                            f(t)\rightarrow af(t-t_0)
                         \end{equation*}
-                            \item[时移阶跃：]
-                        \begin{equation*}
-                                f(t)\rightarrow af(t-t_0)
-                        \end{equation*}
-                        \item[1)] 阶跃函数的性质
+                        \item[3)] 阶跃函数的性质
                             \begin{itemize}
                             \item[(1)] 简化某些函数的表示
                                 \begin{itemize}
@@ -100,16 +123,20 @@
                                     \item 转折点
                                     \item 例题：$f(t)=\epsilon (t+1)+\epsilon (t-1) -3\epsilon (t-2)+\epsilon(t-4)$
                                 \end{itemize}
-                        \item[(2)] 倒置：$f(t)\rightarrow -f(t)$
-                        \item[(3)] 加权、数乘 $f(t)\rightarrow af(t)$
-                        \item[(4)]  表示信号的作用区间（参考简化的例题得到一段为1的函数）$f(t)=[\epsilon (t-t_1)-\epsilon (t-t_2)]$起点-终点
-                        \item[(5)] 积分：$\int_{-\infty}^{t} \epsilon (\tau)d\tau =t\epsilon (t)$
-                        \item[(6)]  微分：$\frac{d\epsilon (t)}{dt}=\delta (t)$ 
-                        \item[(7)]r(t)求微分 得到阶跃，阶跃求微分得到冲激函数  
+                            \item[(2)] 倒置：$f(t)\rightarrow -f(t)$
+                            \item[(3)] 加权、数乘 $f(t)\rightarrow af(t)$
+                            \item[(4)]  表示信号的作用区间（参考简化的例题得到一段为1的函数）$f(t)=[\epsilon (t-t_1)-\epsilon (t-t_2)]$起点-终点
+                            \item[(5)] 积分：$\int_{-\infty}^{t} \epsilon (\tau)d\tau =t\epsilon (t)$
+                            \item[(6)]  微分：$\frac{d\epsilon (t)}{dt}=\delta (t)$ 
+                            \item[(7)]r(t)求微分 得到阶跃，阶跃求微分得到冲激函数  
                         \end{itemize}
                         \item[2)] 冲激信号
                             \begin{itemize}
-                                \item[(1)] $\displaystyle \delta(t) =\int_{-\infty}^{\infty}\delta (t)dt=1$ 当且仅当t落在积分区间内才有意义，由此得出推导公式：
+                                \begin{figure}[h]
+                                    \centering
+                                    \includegraphics[width=0.4\textwidth]{Figure/冲激信号.png}
+                                \end{figure}
+                                \item[(1)] $\displaystyle \int_{-\infty}^{\infty}\delta (t)dt=1$ 当且仅当t落在积分区间内才有意义，由此得出推导公式：
                                 \begin{equation*}
                                     \delta (t)=\int_{-\infty}^{\infty}\delta(t-t_0)dt=A
                                 \end{equation*}
