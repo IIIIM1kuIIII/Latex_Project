@@ -74,7 +74,7 @@
         \subsection{几个重要信号}
             \subsubsection{连续时间信号}
                 \begin{itemize}
-                    \item[1)] 实指数信号:$f(t)=Ke^{at},\tau = \frac{1}{\left\lvert a \right\rvert }$,$\tau$是指数的时间常数，$\tau$越大表示增长或衰减的越慢
+                    \item[1)] 实指数信号:$\displaystyle f(t)=Ke^{at},\tau = \frac{1}{\left\lvert a \right\rvert }$,$\tau$是指数的时间常数，$\tau$越大表示增长或衰减的越慢
                     \item[2)] 正弦信号
                     \item[3)] 虚指数信号
                     \item[4)] 抽样信号$\displaystyle Sa(t)=\frac{sint}{t}$其严格定义如下
@@ -127,8 +127,8 @@
                             \item[(2)] 倒置：$f(t)\rightarrow -f(t)$
                             \item[(3)] 加权、数乘 $f(t)\rightarrow af(t)$
                             \item[(4)]  表示信号的作用区间（参考简化的例题得到一段为1的函数）$f(t)=[\epsilon (t-t_1)-\epsilon (t-t_2)]$起点-终点
-                            \item[(5)] 积分：$\int_{-\infty}^{t} \epsilon (\tau)d\tau =t\epsilon (t)$
-                            \item[(6)]  微分：$\frac{d\epsilon (t)}{dt}=\delta (t)$ 
+                            \item[(5)] 积分：$\displaystyle \int_{-\infty}^{t} \epsilon (\tau)d\tau =t\epsilon (t)$
+                            \item[(6)]  微分：$\displaystyle \frac{d\epsilon (t)}{dt}=\delta (t)$ 
                             \item[(7)]r(t)求微分 得到阶跃，阶跃求微分得到冲激函数  
                         \end{itemize}
                         \newpage
@@ -148,10 +148,10 @@
                                 \item[(4)] 冲激函数的特性
                                     \begin{itemize}
                                          \item[1、] 加权特性：$f(t)\delta (t)=f(0)\delta (t)$，$f(0)$为有效点，拓展为$f(t)\delta (t-t_0)=f(t_0)\delta(t-t_0)$ 
-                                        \item[2、] 筛选特性：$\int_{-\infty}^{\infty}f(t)\delta(t-t_0)dt=f(t_0)$
+                                        \item[2、] 筛选特性：$\displaystyle \int_{-\infty}^{\infty}f(t)\delta(t-t_0)dt=f(t_0)$
                         
-                                        $\int_{-\infty}^{\infty}f(t)\delta(t)dt=f(0)\int_{-\infty}^{\infty}\delta(t)dt=f(0)$，积分区间外为0
-                                        \item[3、] 尺度变换 $\delta(at)=\frac{1}{|a|}\delta(t)$ 
+                                        $\displaystyle \int_{-\infty}^{\infty}f(t)\delta(t)dt=f(0)\int_{-\infty}^{\infty}\delta(t)dt=f(0)$，积分区间外为0
+                                        \item[3、] 尺度变换 $\displaystyle \delta(at)=\frac{1}{|a|}\delta(t)$ 
                                     \end{itemize}
                                     \newpage
                                 \item[(5)] 单位冲激序列$\delta[n]$
@@ -190,6 +190,15 @@
                                 $x_1(t)+x_2(t)\xrightarrow{\text{系统}}y_1(t)+y_2(t)$（叠加性）
                                 \item[3)] 若一个系统\textbf{同时满足(1)、(2)}则称他为线性系统，否则为非线性系统
                                 \item[4)] 离散系统只需要把$x(t)$改成$x[n]$ 
+                                \item[5)] 线性系统的判据
+                                    \begin{itemize}
+                                        \item[(1)] 每一项都有$x$
+                                        \item[(2)] 每一项的$x$都是一次
+                                        \item[(3)] 此判据只有70\% 左右的正确率
+                                        \item[(4)] 例题：$y(t)=3x(t)+2x(t-2)$是否为线性。线性  
+                                        
+                                        而$y[n]=e^{x[n]}$是否为线性，此式子泰勒展开为$\displaystyle y[n]=1+x[n]+\frac{x^2[n]}{2!}$因此为非线性
+                                    \end{itemize}
                             \end{itemize}
                         \subsubsection{时不变系统}
                         \subsubsection{因果系统}
