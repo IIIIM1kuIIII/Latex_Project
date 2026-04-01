@@ -197,37 +197,40 @@
                         \item[(3)] 此判据只有70\% 左右的正确率
                         \item[(4)] 例题：$y(t)=3x(t)+2x(t-2)$是否为线性。线性  
                         
-                        而$\displaystyle y[n]=e^{x[n]}$是否为线性，此式子泰勒展开为$\displaystyle y[n]=1+x[n]+\frac{x^2[n]}{2!}$因此为非线性
+                        而$\displaystyle y[n]=e^{x[n]}$是否为线性，此式子泰勒展开为$\displaystyle y[n]=1+x[n]+\frac{x^2[n]}{2!}+....+$因此为非线性
                     \end{itemize}
             \end{itemize}
-            \subsubsection{卷积积分}
-                \begin{itemize}
-                    \item[1)] 定义：
-                        \begin{equation}
-                            y(t)=f_1(t)\ast f_2(t)=\int_{-\infty}^{\infty}f_1(\tau)f_2(t-\tau)d\tau
-                        \end{equation}
-                    \item[2)] 性质
-                    \begin{tcolorbox}[colback=blue!5!white]
-                        \begin{itemize}
-                            \item[(1)] $f_1(t*t_1)\ast f_2(t-t_2)=y(t-t_1-t_2)$(时移)
-                            \item[(2)] $f(t)\ast \delta(t)=f(t)$ 
-                        \end{itemize} 
-                    \end{tcolorbox}
-                \end{itemize}
-            \subsubsection{连续系统的零输入响应}
-                \begin{itemize}
-                    \item[1)] 系统法：$y(t)=y_{zi}(t)+y_{zs}(t)$全响应=零状态+零输入($zs=zero\ stat,zi=zero\ input$)
-                        \begin{itemize}
-                            \item[(1)] 系统初始条件
-                                $0^-$称为零输入时的初始状态，$0^+$称为加入输入后的初始状态
-                        \end{itemize}  
-                    \item[2)] 经典法：全响应=齐次解+特解 
-                \end{itemize}
         \subsection{时不变系统}
+            \begin{itemize}
+                \item[1)] 定义：$\forall x(t)\rightarrow y(t)$则$x(t-t_0)\rightarrow y(t-t_0),t_0\in R$ 
+                \item[2)] 经验判据
+                    \begin{itemize}
+                        \item[(1)] $t$只在$x$的括号内
+                        \item[(2)] $t$只能是$t$，不能是$-2t,2t,t^t$等其他函数
+                    \end{itemize} 
+            \end{itemize}
         \subsection{因果系统}
+            \begin{itemize}
+                \item[1)] 定义：如果一个系统任何时刻输出只决定于现在和过去的输入，就称该系统为因果系统。
+                \item[2)] 经验判据：$x$括号内的数恒小于等于$y$括号内的数（要正负半轴下都小于）
+            \end{itemize}
         \subsection{稳定系统}
         \subsection{无记忆系统}
+            \begin{itemize}
+                
+            
+            \item[1)] 定义：一个系统无记忆是指$y(t)$的值，仅只依赖于$x(t)$
+
+            $y(t)=x(t-1)$，$y(t)$的值依赖于$(t-1)$所以这是记忆的
+
+            \item[2)] 经验判据：$x$与$y$括号内的数完全一样
+            \item[3)] 无记忆系统一定是因果系统
+            \end{itemize}
         \subsection{可逆系统}
+            \begin{itemize}
+                \item[1)] 定义：$x(t)$能唯一写成$y(t)$的形式
+                \item[2)] 例：$y(t)=x(t)^2,x(t)=\pm \sqrt{y(t)}$此时一个$x(t)$有两个$y(t)$与之对应为不可逆系统
+            \end{itemize}
 
 
 \end{document}
