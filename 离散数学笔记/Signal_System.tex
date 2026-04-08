@@ -4,6 +4,11 @@
 \usepackage{setspace}
 \usepackage{booktabs}
 \usepackage{amsmath} 
+\usepackage{enumitem}
+
+\setlist[enumerate,1]{label=\arabic*)}
+\setlist[enumerate,2]{label=(\arabic*)}
+\setlist[enumerate,3]{label=(\alph*)}
 
 \title{离散数学笔记}
 \author{杨子颉}
@@ -36,37 +41,45 @@
 
         \subsection{命题公式及分类}
             \subsubsection{命题公式的分类}
-            命题公式不是公式，其真值是不确定的
-
-            合式公式：
-            \begin{itemize}
-                \item[1)]由命题变元和联结词或括号进行一定连接的叫合式公式
-                \item[2)]性质：
-                    \begin{itemize}
-                        \item[(1)] 若括号不影响运算次序的时候可以将括号省去
-                        \item[(2)] 合式公式和联结词组成的公式还是合式公式
-                        \item[(3)] 如果一个公式在各种赋值下都为真，则为永真式，反之永假式。有真有假为可满足式    
-                    \end{itemize}
-                    若括号不影响运算次序的时候可以将括号省去 
-            \end{itemize}
-
+            \begin{enumerate}
+            \item 命题公式不是公式，其真值是不确定的
+            \item 合式公式：
+                \begin{enumerate}
+                    \item 由命题变元和联结词或括号进行一定连接的叫合式公式
+                    \item 性质：
+                        \begin{enumerate}
+                            \item 若括号不影响运算次序的时候可以将括号省去
+                            \item 合式公式和联结词组成的公式还是合式公式
+                            \item 如果一个公式在各种赋值下都为真，则为\textbf{永真式}或\textbf{重言式}，反之\textbf{永假式}或\textbf{矛盾式}。有真有假为可满足式    
+                        
+                            \item 若括号不影响运算次序的时候可以将括号省去 
+                        \end{enumerate}
+                \end{enumerate}
+            \end{enumerate}
             \subsubsection{构造真值表}
 
-            \subsubsection{等值演算}
-            如果两个命题公式的真值表完全相等，那么这俩就是等值式。
+    \subsection{等值演算}
+        如果两个命题公式的真值表完全相等，那么这俩就是等值式。
 
-            若等价式$A\leftrightarrow B$是重言式，那么A和B称为等值式，记作$A\Leftrightarrow B$
-            等值演算的性质
-            \begin{itemize}
-                \item[1)]双重否定为肯定：$A \Leftrightarrow \neg \neg A$
-                \item[2)]幂等律：$A\Leftrightarrow A\vee A,A\Leftrightarrow A\wedge A$
-                \item[3)]交换律：$A\vee B \Leftrightarrow B \vee A$
-                \item[4)]分配律 ：$A\vee(B\wedge C)\Leftrightarrow (A\vee B)\wedge(A\vee C)$ 记作$(A+B)*(A+C)$，$A\wedge(B\vee C)\Leftrightarrow (A \wedge B)\vee(A\wedge C)$记作$A*(B+C) = AB+AC$
-                \item[5)]吸收律：$A\vee (A\wedge B)\Leftrightarrow A$，$A\wedge(A\vee B)\Leftrightarrow A$
-                \item[6)]蕴含等值式：$A\rightarrow B\Leftrightarrow \neg A\vee B$，箭头变或，前件加非 
-            \end{itemize}
+        若等价式$A\leftrightarrow B$是重言式，那么A和B称为等值式，记作$A\Leftrightarrow B$
+        等值演算的性质
+        \begin{itemize}
+            \item[1)]双重否定为肯定：$A \Leftrightarrow \neg \neg A$
+            \item[2)]幂等律：$A\Leftrightarrow A\vee A,A\Leftrightarrow A\wedge A$
+            \item[3)]交换律：$A\vee B \Leftrightarrow B \vee A$
+            \item[4)]分配律 ：$A\vee(B\wedge C)\Leftrigkkhtarrow (A\vee B)\wedge(A\vee C)$ 记作$(A+B)*(A+C)$，$A\wedge(B\vee C)\Leftrightarrow (A \wedge B)\vee(A\wedge C)$记作$A*(B+C) = AB+AC$
+            \item[5)]吸收律：$A\vee (A\wedge B)\Leftrightarrow A$，$A\wedge(A\vee B)\Leftrightarrow A$
+            \item[6)]蕴含等值式：$A\rightarrow B\Leftrightarrow \neg A\vee B$，箭头变或，前件加ii非 
+        \end{itemize}
+    \subsection{范式}
+        \begin{enumerate}
+            \item 定义一：仅由\textbf{有限个命题变元}或其否定构成的析取式称为\textbf{简单析取式},同理有\textbf{简单合取式}
+            \item 定义二：仅由\textbf{有限个简单合取式}构成的\textbf{析取式}称为\textbf{析取范式}如$(p\wedge q)\vee(p\wedge q)$，同理有\textbf{合取范式}
+            \item 定义三：在$n$个命题变元中，若在\textbf{简单合取式}中的每个命题变元与其否定有且仅有一个\textbf{出现一次}则称这样的简单合取式为\textbf{极小项}，若全是最小项则称为\textbf{主析取范式}，同理有\textbf{极大项}
+            \item 定义四：任何命题公式都有唯一的主析取范式
+        \end{enumerate}
         
 
 
 
-\end{document}
+\end{document}6t

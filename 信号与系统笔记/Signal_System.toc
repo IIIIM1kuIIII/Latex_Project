@@ -20,4 +20,7 @@
 \contentsline {subsection}{\numberline {2.2}因果系统}{9}{}%
 \contentsline {subsection}{\numberline {2.3}稳定系统}{9}{}%
 \contentsline {subsection}{\numberline {2.4}无记忆系统}{9}{}%
-\contentsline {subsection}{\numberline {2.5}可逆系统}{9}{}%
+\contentsline {subsection}{\numberline {2.5}可逆系统}{10}{}%
+\contentsline {section}{\numberline {3}LTI系统的时域分析}{10}{}%
+\contentsline {subsection}{\numberline {3.1}离散LTI系统卷积}{10}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}离散LTI系统卷积的原理}{10}{}%

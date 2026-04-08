@@ -5,12 +5,21 @@
 \usepackage{amsmath,amsfonts,amsthm}
 \usepackage{tcolorbox}
 \usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{graphicx}
+
+\setlist[enumerate,1]{label=\arabic*)}
+\setlist[enumerate,2]{label=(\arabic*)}
+\setlist[enumerate,3]{label=(\alph*)}
 
 \title{信号与系统笔记}
 \author{杨子颉}
 
 \begin{document}
+
 \maketitle
+
 \newpage
 \tableofcontents
 \newpage
@@ -215,6 +224,14 @@
                 \item[2)] 经验判据：$x$括号内的数恒小于等于$y$括号内的数（要正负半轴下都小于）
             \end{itemize}
         \subsection{稳定系统}
+            \begin{enumerate}
+                \item 定义：$x(t)\rightarrow y(t)$，若$x(t)$有界，则$y(t)$有界，若$y(t)$无界则为非稳定系统
+                \item 例：$y(t)=e^{x(t)}$是否为稳定的。
+                
+                        当$x(t)$输入有界时$y(t)$也有界
+
+                        反例：微分器中的输入为阶跃，输出为冲激（无界）
+            \end{enumerate}
         \subsection{无记忆系统}
             \begin{itemize}
                 
@@ -229,8 +246,78 @@
         \subsection{可逆系统}
             \begin{itemize}
                 \item[1)] 定义：$x(t)$能唯一写成$y(t)$的形式
-                \item[2)] 例：$y(t)=x(t)^2,x(t)=\pm \sqrt{y(t)}$此时一个$x(t)$有两个$y(t)$与之对应为不可逆系统
+                \item[2)] 例：$y(t)=x(t)^2,x(t)=\pm \sqrt{y(t)}$此时一个$x(t)$有两个$y(t)$与之对应为不可逆系统  
             \end{itemize}
+\section{LTI系统的时域分析}
+    \subsection{离散LTI系统卷积}
+        \subsubsection{离散LTI系统卷积的原理}
+        \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.7\textwidth]{Figure/第二章LTI离散卷积图像/图1_输入序列x[n].png}
+                \caption{$x[n]$输入}
+        \end{figure}
+        一个离散$x[n]$可将其分解为如下$\delta[n]$的单位冲激
+        \begin{figure}[h]
+            \begin{minipage}{0.32\textwidth}
+                \centering
+                \includegraphics[width=1\textwidth]{Figure/第二章LTI离散卷积图像/图2_第一项δ[n].png}
+                \caption{第一项$\delta[n]$}
+            \end{minipage}
+            \begin{minipage}{0.32\textwidth}
+                \centering
+                \includegraphics[width=1\textwidth]{Figure/第二章LTI离散卷积图像/图3_第二项2δ[n-1].png}
+                \caption{第二项$\delta[n]$}
+            \end{minipage}
+            \begin{minipage}{0.32\textwidth}
+                \centering
+                \includegraphics[width=1\textwidth]{Figure/第二章LTI离散卷积图像/图4_第三项δ[n-2].png}
+                \caption{第三项$\delta[n]$}
+            \end{minipage}
+        \end{figure}
+
+而这些个$\delta[n]$经过这个$LTI$系统会分别得到一个单位冲激响应（由齐次性得到）
+        \begin{figure}[H]
+            \begin{minipage}{0.32\textwidth}
+                \centering
+                \includegraphics[width=1\textwidth]{Figure/第二章LTI离散卷积图像/图5_第一项响应h[n].png}
+                \caption{第一项冲激响应$h[n]$}
+            \end{minipage}
+            \begin{minipage}{0.32\textwidth}
+                \centering
+                \includegraphics[width=1\textwidth]{Figure/第二章LTI离散卷积图像/图6_第二项响应2h[n-1].png}
+                \caption{第二项冲激响应$h[n]$}
+            \end{minipage}
+            \begin{minipage}{0.32\textwidth}
+                \centering
+                \includegraphics[width=1\textwidth]{Figure/第二章LTI离散卷积图像/图7_第三项响应h[n-2].png}
+                \caption{第三项冲激响应$h[n]$}
+            \end{minipage}
+        \end{figure}
 
 
+        此时再将每一个$\delta[n]$经过LTI系统得到的冲激响应相加就能得到最后卷积和的图像（由叠加性得到）
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.7\textwidth]{Figure/第二章LTI离散卷积图像/图8_输出序列y[n].png}
+            \caption{输出序列$y[n]$}
+        \end{figure}
+
+        因此，离散系统的卷积就是把$x[n]$分解为$\delta[n]$之后分别经过$LTI$系统得到各自的单位冲激响应而后叠加得到新的图像
+        \begin{tcolorbox}[colback=blue!5!white]
+        列表法求离散卷积和
+        \begin{enumerate}
+            \item 确定$y[n]=x[n]\ast h[n]$的取值范围：$y[n]$最左边（最右边）=$x[n]$最左边（最右边）+$h[n]$最左边（最右边）
+            \item 列表：横着为$h[n]$依次从左到右的值，竖着为$x[n]$依次从左到右的值，然后$x[n]$乘$h[n]$的值
+            \item 按照取值范围从最左边到最右边依次填入$x[n]$乘$h[n]$完相加的值
+        \end{enumerate}
+        \end{tcolorbox}
+        
+        例如图12：
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\textwidth]{Figure/第二章LTI离散卷积图像/列表法求离散卷积图像.png}
+                \caption{列表法求离散卷积图像}
+            \end{figure}
+
+        注意$x[n]$与$x[n-1]$的值要错开，因为$LTI$系统具有时不变性，因此$x[n-1]$比$x[n]$要向右移一格
 \end{document}
