@@ -181,6 +181,7 @@
                         \end{itemize}
                     
                 \end{itemize}
+\newpage
     \section{典型的系统}
         \subsubsection{线性系统}
         $x(t)\longrightarrow \boxed{\text{系统}}\longrightarrow y(t)$
@@ -248,6 +249,7 @@
                 \item[1)] 定义：$x(t)$能唯一写成$y(t)$的形式
                 \item[2)] 例：$y(t)=x(t)^2,x(t)=\pm \sqrt{y(t)}$此时一个$x(t)$有两个$y(t)$与之对应为不可逆系统  
             \end{itemize}
+\newpage
 \section{LTI系统的时域分析}
     \subsection{离散LTI系统卷积}
         \subsubsection{离散LTI系统卷积的原理}
@@ -303,16 +305,9 @@
         \end{figure}
 
         因此，离散系统的卷积就是把$x[n]$分解为$\delta[n]$之后分别经过$LTI$系统得到各自的单位冲激响应而后叠加得到新的图像
-        \begin{tcolorbox}[colback=blue!5!white]
-        列表法求离散卷积和
-        \begin{enumerate}
-            \item 确定$y[n]=x[n]\ast h[n]$的取值范围：$y[n]$最左边（最右边）=$x[n]$最左边（最右边）+$h[n]$最左边（最右边）
-            \item 列表：横着为$h[n]$依次从左到右的值，竖着为$x[n]$依次从左到右的值，然后$x[n]$乘$h[n]$的值
-            \item 按照取值范围从最左边到最右边依次填入$x[n]$乘$h[n]$完相加的值
-        \end{enumerate}
-        \end{tcolorbox}
+
         
-        例如图12：
+        列表法如图12：
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=0.8\textwidth]{Figure/第二章LTI离散卷积图像/列表法求离散卷积图像.png}
@@ -320,4 +315,32 @@
             \end{figure}
 
         注意$x[n]$与$x[n-1]$的值要错开，因为$LTI$系统具有时不变性，因此$x[n-1]$比$x[n]$要向右移一格
+        \begin{tcolorbox}[colback=blue!5!white]
+            离散卷积求解方法
+            \begin{enumerate}
+                \item 列表法求离散卷积和
+                \begin{enumerate}
+                    \item 确定$y[n]=x[n]\ast h[n]$的取值范围：$y[n]$最左边（最右边）=$x[n]$最左边（最右边）+$h[n]$最左边（最右边）
+                    \item 列表：横着为$h[n]$依次从左到右的值，竖着为$x[n]$依次从左到右的值，然后$x[n]$乘$h[n]$的值
+                    \item 按照取值范围从最左边到最右边依次填入$x[n]$乘$h[n]$完相加的值
+                \end{enumerate}
+                \item 公式法求离散卷积和
+                    \begin{equation}
+                        y[n]=\sum_{k=-\infty}^{\infty} x[k]h[n-k]
+                    \end{equation}
+                \item 公式法求卷积的方法
+                    \begin{enumerate}
+                        \item 翻转、平移、相乘、求和
+                        \begin{equation}
+                            x[n]\ast h[n]=\sum_{k=-\infty}^{\infty} x[k]h[-(k-n)]
+                        \end{equation}
+                        \item $x[n]$、$h[n]$都可以翻转，但是翻转哪个平移哪个
+                    \end{enumerate}
+            \end{enumerate}
+        \end{tcolorbox}
+    \subsection{连续LTI系统卷积}
+        \begin{equation}
+            \int_{-\infty}^{\infty} x(\tau)h(t-\tau) d\tau
+        \end{equation}
+        若$\delta(t)\xrightarrow{LTI}h(t)$则$x(t)\xrightarrow{LTI}y(t)=\int_{-\infty}^{\infty} x(\tau)h(t-\tau) d\tau$
 \end{document}

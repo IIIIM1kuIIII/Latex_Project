@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.10)  6 APR 2026 22:31
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.10)  10 APR 2026 19:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -680,6 +680,8 @@ File: Figure/离散单位脉冲序列.png Graphic file (type bmp)
 [8]
 
 [9]
+
+[10]
 File: Figure/第二章LTI离散卷积图像/图1_输入序列x[n].png Graphic file (type bmp)
 <Figure/第二章LTI离散卷积图像/图1_输入序列x[n].png>
 File: Figure/第二章LTI离散卷积图像/图2_第一项δ[n].png Graphic file (type bmp)
@@ -694,18 +696,18 @@ File: Figure/第二章LTI离散卷积图像/图6_第二项响应2h[n-1].png Grap
 <Figure/第二章LTI离散卷积图像/图6_第二项响应2h[n-1].png>
 File: Figure/第二章LTI离散卷积图像/图7_第三项响应h[n-2].png Graphic file (type bmp)
 <Figure/第二章LTI离散卷积图像/图7_第三项响应h[n-2].png>
-
-
-[10]
 File: Figure/第二章LTI离散卷积图像/图8_输出序列y[n].png Graphic file (type bmp)
 <Figure/第二章LTI离散卷积图像/图8_输出序列y[n].png>
+
+
+[11]
 File: Figure/第二章LTI离散卷积图像/列表法求离散卷积图像.png Graphic file (type bmp)
 <Figure/第二章LTI离散卷积图像/列表法求离散卷积图像.png>
 
 
-[11]
+[12]
 
-[12] (./Signal_System.aux)
+[13] (./Signal_System.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/07/14>
@@ -720,4 +722,4 @@ Here is how much of TeX's memory you used:
  36 hyphenation exceptions out of 8191
  116i,12n,121p,450b,666s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Signal_System.pdf (12 pages).
+Output written on Signal_System.pdf (13 pages).
