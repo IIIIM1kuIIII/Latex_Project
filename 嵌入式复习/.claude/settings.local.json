@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xelatex -interaction=nonstopmode \"嵌入式知识点.tex\")",
+      "Bash(powershell -Command \"Get-WinSystemLocale; [System.Runtime.InteropServices.RuntimeInformation]::FrameworkDescription\")",
+      "Bash(fc-list \"SimSun\")",
+      "Bash(fc-list \"SimHei\")",
+      "Bash(fc-list \"KaiTi\")",
+      "Bash(python convert_tables.py)",
+      "Bash(git checkout *)",
+      "Bash(python fix_tables2.py)"
+    ]
+  }
+}

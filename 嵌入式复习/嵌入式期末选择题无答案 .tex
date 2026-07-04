@@ -1,0 +1,305 @@
+﻿\documentclass{ctexart}
+
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\geometry{margin=2.5cm}
+\everymath{\displaystyle}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}
+  {\quad\thesubsubsection}
+  {1em}
+  {}
+\numberwithin{figure}{section}
+\renewcommand{\thefigure}{\thesection-\arabic{figure}}
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{\thesection-\arabic{equation}}
+
+\setlist[enumerate,1]{label=\arabic*)}
+\setlist[enumerate,2]{label=(\arabic*)}
+\setlist[enumerate,3]{label=(\alph*)}
+\setlist[itemize]{leftmargin=2em}
+\renewcommand{\arraystretch}{1.25}
+
+% 选择题选项：每个选项单独成行
+\newcommand{\choice}[2]{\par\noindent\hspace{3em}\textbf{#1}.~~#2}
+
+% 答案：单独一行，蓝色加粗
+\newcommand{\ans}[1]{\par\noindent\hspace{3em}\textcolor{blue!60!black}{\textbf{【答案】#1}}\par\vspace{0.6em}}
+
+\newenvironment{questionlist}{\begin{description}[style=nextline,leftmargin=0pt,labelsep=0pt,font=\bfseries,itemsep=0.8em]}{\end{description}}
+\newcommand{\blank}{\underline{\hspace{2.2cm}}}
+
+\title{嵌入式复习}
+\author{杨子颉}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+    {\LARGE STM32F103 选择题整理}\\[4pt]
+    {\large 题目与选项}
+\end{center}
+
+\section*{一、单选题}
+
+\begin{enumerate}
+\item STM32F103系列单片机采用的内核架构是（\quad）。
+\choice{A}{Cortex-A7}
+\choice{B}{Cortex-M3}
+\choice{C}{Cortex-M4}
+\choice{D}{Cortex-R4}
+\item STM32F103单片机的最高系统工作频率通常为（\quad）。
+\choice{A}{36MHz}
+\choice{B}{48MHz}
+\choice{C}{72MHz}
+\choice{D}{100MHz}
+\item 在HAL库中，用于初始化GPIO引脚的函数是（\quad）。
+\choice{A}{\texttt{HAL\_GPIO\_Init()}}
+\choice{B}{\texttt{HAL\_GPIO\_WritePin()}}
+\choice{C}{\texttt{HAL\_GPIO\_ReadPin()}}
+\choice{D}{\texttt{HAL\_GPIO\_LockPin()}}
+\item STM32F103的ADC（模数转换器）的分辨率是（\quad）位。
+\choice{A}{8}
+\choice{B}{10}
+\choice{C}{12}
+\choice{D}{14}
+\item STM32F103中，用于管理中断优先级和嵌套的控制器是（\quad）。
+\choice{A}{EXTI}
+\choice{B}{NVIC}
+\choice{C}{RCC}
+\choice{D}{DMA}
+\item 若系统时钟为72MHz，要使定时器产生1ms的中断，预分频系数（PSC）设为71，则自动重装载值（ARR）应设为（\quad）。
+\choice{A}{999}
+\choice{B}{9999}
+\choice{C}{7199}
+\choice{D}{7200}
+\item 在HAL库中，用于翻转GPIO引脚电平的函数是（\quad）。
+\choice{A}{\texttt{HAL\_GPIO\_WritePin()}}
+\choice{B}{\texttt{HAL\_GPIO\_ReadPin()}}
+\choice{C}{\texttt{HAL\_GPIO\_TogglePin()}}
+\choice{D}{\texttt{HAL\_GPIO\_LockPin()}}
+\item STM32F103的DMA（直接存储器访问）控制器的主要作用是（\quad）。
+\choice{A}{提高CPU运算速度}
+\choice{B}{在不占用CPU的情况下进行数据传输}
+\choice{C}{管理中断优先级}
+\choice{D}{提供外部时钟}
+\item 在HAL库中，用于读取ADC转换结果的函数是（\quad）。
+\choice{A}{\texttt{HAL\_ADC\_GetValue()}}
+\choice{B}{\texttt{HAL\_ADC\_PollForConversion()}}
+\choice{C}{\texttt{HAL\_ADC\_Start()}}
+\choice{D}{\texttt{HAL\_ADC\_ConfigChannel()}}
+\item 若要使能GPIOA端口的时钟，在HAL库中通常调用的宏或函数涉及（\quad）。
+\choice{A}{\texttt{\_\_HAL\_RCC\_GPIOA\_CLK\_ENABLE()}}
+\choice{B}{\texttt{\_\_HAL\_RCC\_GPIOA\_CLK\_DISABLE()}}
+\choice{C}{\texttt{RCC\_APB1PeriphClockCmd()}}
+\choice{D}{\texttt{RCC\_AHBPeriphClockCmd()}}
+\item ADC转换过程不包含下列哪一项？（\quad）
+\choice{A}{采样}
+\choice{B}{量化}
+\choice{C}{编码}
+\choice{D}{逆采样}
+\item 在STM32中，管理中断优先级的核心组件是？（\quad）
+\choice{A}{EXTI}
+\choice{B}{NVIC}
+\choice{C}{RCC}
+\choice{D}{DMA}
+\item NVIC可用来表示优先权等级的位数可配置为（\quad）。
+\choice{A}{2}
+\choice{B}{4}
+\choice{C}{6}
+\choice{D}{8}
+\item 异步串行通信中，起始位的作用是（\quad）。
+\choice{A}{标识数据包的优先级}
+\choice{B}{通知接收方开始帧同步}
+\choice{C}{携带校验信息}
+\choice{D}{决定传输速率}
+\item 若要配置PA0引脚为下降沿触发的外部中断，以下哪项配置是正确的？（\quad）
+\choice{A}{\texttt{EXTI\_Trigger = EXTI\_TRIGGER\_RISING}}
+\choice{B}{\texttt{EXTI\_Trigger = EXTI\_TRIGGER\_FALLING}}
+\choice{C}{\texttt{EXTI\_Trigger = EXTI\_TRIGGER\_BOTH}}
+\choice{D}{\texttt{EXTI\_Trigger = GPIO\_MODE\_IT\_RISING}}
+\item PWM模式下，若ARR=999，CCR=250，则占空比约为（\quad）。
+\choice{A}{10\%}
+\choice{B}{25\%}
+\choice{C}{50\%}
+\choice{D}{75\%}
+\item \texttt{HAL\_UART\_Receive\_IT(\&huart1, dat, 1)} 的功能是（\quad）。
+\choice{A}{停止接收中断}
+\choice{B}{开启定时中断}
+\choice{C}{开启发送中断}
+\choice{D}{开启接收中断}
+\item 下面是Cortex-M3处理器的工作模式的是（\quad）。
+\choice{A}{Thread模式}
+\choice{B}{Thumb模式}
+\choice{C}{Thumb-2模式}
+\choice{D}{Debug模式}
+\item RTC是指（\quad）。
+\choice{A}{外部中断}
+\choice{B}{实时时钟}
+\choice{C}{定时中断}
+\choice{D}{DMA}
+\item 以下哪个是嵌入式系统的核心特点之一？（\quad）
+\choice{A}{高功耗}
+\choice{B}{可裁剪性}
+\choice{C}{通用性强}
+\choice{D}{硬件独立于软件}
+\item PWM是（\quad）。
+\choice{A}{脉冲宽度调制}
+\choice{B}{脉冲频率调制}
+\choice{C}{脉冲幅度调制}
+\choice{D}{脉冲位置调制}
+\item Cortex-M3内核采用的架构是？（\quad）
+\choice{A}{冯·诺依曼架构}
+\choice{B}{哈佛架构}
+\choice{C}{改进的冯·诺依曼架构}
+\choice{D}{以上都不是}
+\item 在STM32定时器中，ARR寄存器的作用是？（\quad）
+\choice{A}{设置预分频系数}
+\choice{B}{设置自动重装载值（决定周期）}
+\choice{C}{设置比较值（决定占空比）}
+\choice{D}{使能定时器}
+\item STM32微控制器是由哪家公司生产的？（\quad）
+\choice{A}{Intel}
+\choice{B}{AMD}
+\choice{C}{STMicroelectronics}
+\choice{D}{Qualcomm}
+\item 下列关于DMA的描述，正确的是（\quad）。
+\choice{A}{DMA传输需要CPU全程参与}
+\choice{B}{DMA只能在内存和外设之间传输数据}
+\choice{C}{DMA可以在内存和内存之间传输数据}
+\choice{D}{STM32F103没有DMA功能}
+\item STM32F103的ADC参考电压通常是（\quad）。
+\choice{A}{1.8V}
+\choice{B}{2.5V}
+\choice{C}{3.3V}
+\choice{D}{5.0V}
+\item Cortex-M3内核的NVIC最多支持多少个可屏蔽中断通道？（\quad）
+\choice{A}{16}
+\choice{B}{43}
+\choice{C}{60}
+\choice{D}{256}
+\item 在嵌入式系统中，中断是一种什么机制？（\quad）
+\choice{A}{用于程序调试}
+\choice{B}{用于实时响应外部事件}
+\choice{C}{用于数据传输}
+\choice{D}{用于内存管理}
+\item 在HAL库中，用于读取GPIO引脚输入电平的函数是（\quad）。
+\choice{A}{\texttt{HAL\_GPIO\_ReadPin()}}
+\choice{B}{\texttt{HAL\_GPIO\_WritePin()}}
+\choice{C}{\texttt{HAL\_GPIO\_TogglePin()}}
+\choice{D}{\texttt{HAL\_GPIO\_LockPin()}}
+\item 下列哪个不是STM32定时器时基单元的一部分？（\quad）
+\choice{A}{自动重载寄存器}
+\choice{B}{定时器计数器}
+\choice{C}{预分频寄存器}
+\choice{D}{溢出寄存器}
+\item 在STM32的NVIC中，优先级分组设置为第4组时，抢占优先级和子优先级的级数分别是多少？（\quad）
+\choice{A}{抢占优先级4级，子优先级12级}
+\choice{B}{抢占优先级16级，子优先级0级}
+\choice{C}{抢占优先级8级，子优先级8级}
+\choice{D}{抢占优先级12级，子优先级4级}
+\item STM32F103的USART的发送完成标志位是（\quad）。
+\choice{A}{TC}
+\choice{B}{RXNE}
+\choice{C}{TXE}
+\choice{D}{IDLE}
+\item 异步通信中，数据通常是以（\quad）为最小单位组成数据帧传送，数据帧按照固定“节拍”（即波特率）通过发送端一帧一帧地发送，接收端则一帧一帧地接收。（\quad）
+\choice{A}{字}
+\choice{B}{双字}
+\choice{C}{字节}
+\choice{D}{4位}
+\item SysTick（滴答定时器）是一个位于（内核/外设）中的\underline{\hspace{1cm}}位递减计数器。
+\choice{A}{内核，32位}
+\choice{B}{内核，24位}
+\choice{C}{外设，24位}
+\choice{D}{外设，32位}
+\item 下面选项哪个是独立看门狗的时钟源（\quad）。
+\choice{A}{HSE}
+\choice{B}{HSI}
+\choice{C}{LSE}
+\choice{D}{LSI}
+\item 下面选项哪个是实时时钟RTC的时钟源（\quad）。
+\choice{A}{HSI}
+\choice{B}{LSI}
+\choice{C}{HSE}
+\choice{D}{LSE}
+\item 下面关于IIC总线协议起始信号的说法正确的是（\quad）。
+\choice{A}{时钟信号为高电平期间，数据线上数据出现从高到低的跳变。}
+\choice{B}{时钟信号为高电平期间，数据线上数据出现从低到高的跳变。}
+\choice{C}{时钟信号为低电平期间，数据线上数据出现从高到低的跳变。}
+\choice{D}{时钟信号为低电平期间，数据线上数据出现从低到高的跳变。}
+\item 下面关于IIC总线协议停止信号的说法正确的是（\quad）。
+\choice{A}{时钟信号为高电平期间，数据线上数据出现从高到低的变化。}
+\choice{B}{时钟信号为高电平期间，数据线上数据出现从低到高的变化。}
+\choice{C}{时钟信号为低电平期间，数据线上数据出现从高到低的变化。}
+\choice{D}{时钟信号为低电平期间，数据线上数据出现从低到高的变化。}
+\item 下面关于IIC总线数据有效性的说法正确的是（\quad）。
+\choice{A}{时钟信号为高电平期间，数据线上的数据必须保持稳定。}
+\choice{B}{时钟信号为低电平期间，数据线上的数据必须保持稳定。}
+\choice{C}{时钟信号为高电平期间，数据线上的数据要有变化。}
+\choice{D}{时钟信号为低电平期间，数据线上的数据要有变化。}
+\item 当GPIO的引脚复用为ADC的模拟信号输入端时，此时引脚的工作模式应设置为以下哪种模式？（\quad）
+\choice{A}{浮空输入}
+\choice{B}{上拉输入}
+\choice{C}{下拉输入}
+\choice{D}{模拟输入}
+\item 当计数器从0递增到自动重装载值（ARR）后复位并产生更新事件，此时计数器的计数模式为以下哪种？（\quad）
+\choice{A}{向上计数模式}
+\choice{B}{向下计数模式}
+\choice{C}{中央对齐模式}
+\choice{D}{以上模式都可以}
+\item 当USART1工作在全双工模式时，USARTx\_TX和USARTx\_RX对应的GPIO引脚应该分别工作在哪种模式？（\quad）
+\choice{A}{推挽复用输出模式，下拉输入}
+\choice{B}{推挽复用输出模式，浮空输入}
+\choice{C}{开漏输出，上拉输入}
+\choice{D}{开漏输出，浮空输入}
+\item 当SPI总线协议的CPOL=1，CPHA=1时，以下说法正确的是（\quad）。
+\choice{A}{空闲时时钟线SCK为高电平，上升沿采样。}
+\choice{B}{空闲时时钟线SCK为低电平，上升沿采样。}
+\choice{C}{空闲时时钟线SCK为高电平，下降沿采样。}
+\choice{D}{空闲时时钟线SCK为低电平，下降沿采样。}
+\item 嵌入式系统的哪个特点体现了其量身定制的特性？（\quad）
+\choice{A}{嵌入性}
+\choice{B}{专用性}
+\choice{C}{计算机系统性}
+\choice{D}{可裁剪性}
+\item 在UART通信中，115200波特率表示什么？（\quad）
+\choice{A}{每秒传输115200字节}
+\choice{B}{每秒传输115200位}
+\choice{C}{每秒传输115200个字符}
+\choice{D}{每秒传输115200个数据包}
+\end{enumerate}
+
+\section*{二、多选题}
+
+\begin{enumerate}
+\item STM32F103的时钟源包括（\quad）。
+\choice{A}{HSI（内部高速时钟）}
+\choice{B}{HSE（外部高速时钟）}
+\choice{C}{LSI（内部低速时钟）}
+\choice{D}{LSE（外部低速时钟）}
+\item 下列关于STM32中断的描述，正确的有（\quad）。
+\choice{A}{STM32的中断优先级分为抢占优先级和子优先级}
+\choice{B}{所有中断的优先级都是固定的，不可编程}
+\choice{C}{当抢占优先级相同时，子优先级高的中断不能打断子优先级低的中断}
+\choice{D}{抢占优先级高的中断可以打断抢占优先级低的中断}
+\end{enumerate}
+
+\end{document}

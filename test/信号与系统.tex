@@ -1,0 +1,1184 @@
+\documentclass[UTF8]{ctexart}
+
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+
+\geometry{a4paper, margin=2.2cm}
+\setlist[itemize]{itemsep=2pt, topsep=2pt}
+\setlist[enumerate]{itemsep=2pt, topsep=2pt}
+
+\title{信号与系统知识点整理}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\newpage
+
+%========================
+\section{常用信号与基本概念}
+
+\subsection{常见连续时间信号}
+
+信号与系统中常见的基本信号有：
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title=常见信号]
+\begin{itemize}
+    \item 正弦信号：$x(t)=A\sin(\omega t+\varphi)$ 或 $x(t)=A\cos(\omega t+\varphi)$
+    \item 指数信号：$x(t)=e^{-at}u(t)$
+    \item 单位阶跃信号：$u(t)$ 或 $\varepsilon(t)$
+    \item 单位冲激信号：$\delta(t)$
+    \item 抽样函数：
+    \[
+    Sa(t)=\frac{\sin t}{t}
+    \]
+\end{itemize}
+\end{tcolorbox}
+
+其中，正弦信号的周期为：
+
+\[
+T=\frac{2\pi}{\omega}
+\]
+
+若两个周期信号相加，且两个周期之比为有理数，则其和仍然是周期信号，周期为两个周期的最小公倍周期。
+
+例如：
+
+\[
+x_1(t)=\sin \omega_1 t,\qquad x_2(t)=\cos \omega_2 t
+\]
+
+若：
+
+\[
+\frac{T_1}{T_2} \in \mathbb{Q}
+\]
+
+则：
+
+\[
+x(t)=x_1(t)+x_2(t)
+\]
+
+为周期信号。
+
+\subsection{单位阶跃信号}
+
+单位阶跃信号定义为：
+
+\[
+u(t)=
+\begin{cases}
+0, & t<0\\
+1, & t>0
+\end{cases}
+\]
+
+常用形式：
+
+\[
+u(t-a)=
+\begin{cases}
+0, & t<a\\
+1, & t>a
+\end{cases}
+\]
+
+表示信号在 $t=a$ 时刻开始。
+
+\[
+u(a-t)=
+\begin{cases}
+1, & t<a\\
+0, & t>a
+\end{cases}
+\]
+
+表示信号在 $t=a$ 时刻结束。
+
+\subsection{矩形窗表示法}
+
+利用阶跃函数可以表示有限时间区间内的信号。
+
+若信号只在区间 $a<t<b$ 内存在，则可以写成：
+
+\[
+x(t)=f(t)\left[u(t-a)-u(t-b)\right]
+\]
+
+例如，信号 $f(t)$ 只在 $0<t<3$ 内存在：
+
+\[
+x(t)=f(t)\left[u(t)-u(t-3)\right]
+\]
+
+如果信号在 $-5<t<0$ 内存在，则：
+
+\[
+x(t)=f(t)\left[u(t+5)-u(t)\right]
+\]
+
+\subsection{单位冲激信号}
+
+单位冲激信号 $\delta(t)$ 具有如下性质：
+
+\begin{tcolorbox}[colback=yellow!8!white,colframe=orange!80!black,title=冲激信号的重要性质]
+\[
+\int_{-\infty}^{+\infty}\delta(t)\,dt=1
+\]
+
+\[
+\int_{-\infty}^{+\infty}f(t)\delta(t)\,dt=f(0)
+\]
+
+\[
+\int_{-\infty}^{+\infty}f(t)\delta(t-t_0)\,dt=f(t_0)
+\]
+\end{tcolorbox}
+
+这叫做冲激函数的筛选性质，也叫抽样性质。
+
+\subsection{冲激函数与阶跃函数的关系}
+
+单位冲激函数是单位阶跃函数的导数：
+
+\[
+\delta(t)=\frac{d}{dt}u(t)
+\]
+
+单位阶跃函数是单位冲激函数的积分：
+
+\[
+u(t)=\int_{-\infty}^{t}\delta(\tau)\,d\tau
+\]
+
+对于移位形式：
+
+\[
+\frac{d}{dt}u(t-a)=\delta(t-a)
+\]
+
+%========================
+\section{信号的基本运算与波形变换}
+
+\subsection{信号的平移}
+
+若原信号为 $f(t)$，则：
+
+\[
+f(t-t_0)
+\]
+
+表示信号向右平移 $t_0$。
+
+\[
+f(t+t_0)
+\]
+
+表示信号向左平移 $t_0$。
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!50!black,title=平移判断]
+\begin{itemize}
+    \item $f(t-a)$：向右移 $a$
+    \item $f(t+a)$：向左移 $a$
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{信号的反转}
+
+\[
+f(-t)
+\]
+
+表示信号关于纵轴反转。
+
+也就是说，原来在 $t=a$ 处的特征，会变到 $t=-a$ 处。
+
+\subsection{尺度变换}
+
+\[
+f(at)
+\]
+
+表示时间尺度变化。
+
+\begin{itemize}
+    \item 当 $|a|>1$ 时，波形在时间轴上压缩。
+    \item 当 $0<|a|<1$ 时，波形在时间轴上展宽。
+    \item 当 $a<0$ 时，还包含关于纵轴反转。
+\end{itemize}
+
+例如：
+
+\[
+f(2t)
+\]
+
+表示信号压缩为原来的一半。
+
+\[
+f\left(\frac{t}{2}\right)
+\]
+
+表示信号展宽为原来的两倍。
+
+\subsection{波形变换的一般步骤}
+
+处理复杂形式：
+
+\[
+f(at+b)
+\]
+
+时，可以按如下步骤：
+
+\begin{enumerate}
+    \item 先将括号内整理成：
+    \[
+    f\left[a\left(t+\frac{b}{a}\right)\right]
+    \]
+    \item 判断是否反转：看 $a$ 的正负。
+    \item 判断压缩或展宽：看 $|a|$。
+    \item 判断平移：看 $t+\frac{b}{a}$。
+\end{enumerate}
+
+\subsection{波形微分}
+
+若信号存在突变，则微分后会出现冲激信号。
+
+例如：
+
+\[
+\frac{d}{dt}u(t-a)=\delta(t-a)
+\]
+
+若矩形信号为：
+
+\[
+x(t)=u(t)-u(t-T)
+\]
+
+则其导数为：
+
+\[
+x'(t)=\delta(t)-\delta(t-T)
+\]
+
+也就是说，矩形波上升沿对应正冲激，下降沿对应负冲激。
+
+%========================
+\section{系统响应}
+
+\subsection{系统响应的分类}
+
+线性系统的完全响应通常可分为：
+
+\[
+y(t)=y_{zi}(t)+y_{zs}(t)
+\]
+
+其中：
+
+\begin{itemize}
+    \item $y_{zi}(t)$：零输入响应，由系统初始状态引起。
+    \item $y_{zs}(t)$：零状态响应，由外加激励引起。
+\end{itemize}
+
+也可以从响应形态分为：
+
+\[
+y(t)=y_n(t)+y_f(t)
+\]
+
+其中：
+
+\begin{itemize}
+    \item $y_n(t)$：自然响应，与系统固有特性有关。
+    \item $y_f(t)$：强迫响应，与输入信号有关。
+\end{itemize}
+
+还可以从时间变化趋势分为：
+
+\begin{itemize}
+    \item 瞬态响应：随时间逐渐衰减的部分。
+    \item 稳态响应：系统稳定后保留下来的部分。
+\end{itemize}
+
+\subsection{线性时不变系统}
+
+线性时不变系统简称 LTI 系统。
+
+其性质包括：
+
+\begin{itemize}
+    \item 线性：满足叠加性和齐次性。
+    \item 时不变：输入延时，输出也相同延时。
+\end{itemize}
+
+若系统输入为 $f(t)$，单位冲激响应为 $h(t)$，则零状态响应为：
+
+\[
+y_{zs}(t)=f(t)*h(t)
+\]
+
+其中 $*$ 表示卷积。
+
+\subsection{卷积积分}
+
+连续时间卷积定义为：
+
+\[
+y(t)=f(t)*h(t)=\int_{-\infty}^{+\infty}f(\tau)h(t-\tau)\,d\tau
+\]
+
+卷积的基本性质：
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title=卷积性质]
+\[
+f(t)*h(t)=h(t)*f(t)
+\]
+
+\[
+f(t)*\delta(t)=f(t)
+\]
+
+\[
+f(t)*\delta(t-t_0)=f(t-t_0)
+\]
+
+\[
+f(t-t_1)*\delta(t-t_2)=f(t-t_1-t_2)
+\]
+\end{tcolorbox}
+
+\subsection{系统连接}
+
+若两个系统的冲激响应分别为 $h_1(t)$ 和 $h_2(t)$：
+
+\begin{itemize}
+    \item 串联系统：
+    \[
+    h(t)=h_1(t)*h_2(t)
+    \]
+    \item 并联系统：
+    \[
+    h(t)=h_1(t)+h_2(t)
+    \]
+\end{itemize}
+
+%========================
+\section{傅里叶级数与傅里叶变换}
+
+\subsection{周期信号的判断}
+
+若信号 $x(t)$ 满足：
+
+\[
+x(t+T)=x(t)
+\]
+
+则称 $x(t)$ 为周期信号，其中 $T$ 为周期。
+
+正弦信号：
+
+\[
+x(t)=\sin \omega_0 t
+\]
+
+的周期为：
+
+\[
+T=\frac{2\pi}{\omega_0}
+\]
+
+对于多个周期信号相加，若各周期的比值为有理数，则总信号为周期信号。
+
+\subsection{奇偶性}
+
+信号的奇偶性：
+
+\[
+x(-t)=x(t)
+\]
+
+则 $x(t)$ 为偶函数。
+
+\[
+x(-t)=-x(t)
+\]
+
+则 $x(t)$ 为奇函数。
+
+常见结论：
+
+\begin{itemize}
+    \item $\cos \omega t$ 是偶函数。
+    \item $\sin \omega t$ 是奇函数。
+    \item 偶函数的傅里叶级数只含余弦项。
+    \item 奇函数的傅里叶级数只含正弦项。
+\end{itemize}
+
+\subsection{三角形式傅里叶级数}
+
+周期信号 $x(t)$ 可以展开为：
+
+\[
+x(t)=a_0+\sum_{n=1}^{\infty}\left[a_n\cos(n\omega_0 t)+b_n\sin(n\omega_0 t)\right]
+\]
+
+其中：
+
+\[
+\omega_0=\frac{2\pi}{T}
+\]
+
+系数为：
+
+\[
+a_0=\frac{1}{T}\int_{T}x(t)\,dt
+\]
+
+\[
+a_n=\frac{2}{T}\int_{T}x(t)\cos(n\omega_0 t)\,dt
+\]
+
+\[
+b_n=\frac{2}{T}\int_{T}x(t)\sin(n\omega_0 t)\,dt
+\]
+
+若 $x(t)$ 为偶函数，则：
+
+\[
+b_n=0
+\]
+
+若 $x(t)$ 为奇函数，则：
+
+\[
+a_0=0,\qquad a_n=0
+\]
+
+\subsection{傅里叶变换定义}
+
+连续时间傅里叶变换定义为：
+
+\[
+F(\omega)=\int_{-\infty}^{+\infty}f(t)e^{-j\omega t}\,dt
+\]
+
+反变换为：
+
+\[
+f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(\omega)e^{j\omega t}\,d\omega
+\]
+
+记作：
+
+\[
+f(t)\leftrightarrow F(\omega)
+\]
+
+\subsection{常用傅里叶变换对}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c c}
+\toprule
+时域信号 & 频域信号 \\
+\midrule
+$\delta(t)$ & $1$ \\
+$1$ & $2\pi\delta(\omega)$ \\
+$e^{-at}u(t),\ a>0$ & $\dfrac{1}{a+j\omega}$ \\
+$u(t)$ & $\pi\delta(\omega)+\dfrac{1}{j\omega}$ \\
+$\dfrac{\sin Wt}{\pi t}$ & 矩形频谱 \\
+$Sa(Wt)=\dfrac{\sin Wt}{Wt}$ & 矩形频谱形式 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{傅里叶变换性质}
+
+\subsubsection{线性性质}
+
+若：
+
+\[
+f_1(t)\leftrightarrow F_1(\omega)
+\]
+
+\[
+f_2(t)\leftrightarrow F_2(\omega)
+\]
+
+则：
+
+\[
+af_1(t)+bf_2(t)\leftrightarrow aF_1(\omega)+bF_2(\omega)
+\]
+
+\subsubsection{时移性质}
+
+若：
+
+\[
+f(t)\leftrightarrow F(\omega)
+\]
+
+则：
+
+\[
+f(t-t_0)\leftrightarrow F(\omega)e^{-j\omega t_0}
+\]
+
+时域平移对应频域乘以相位因子。
+
+\subsubsection{频移性质}
+
+若：
+
+\[
+f(t)\leftrightarrow F(\omega)
+\]
+
+则：
+
+\[
+f(t)e^{j\omega_0 t}\leftrightarrow F(\omega-\omega_0)
+\]
+
+\[
+f(t)e^{-j\omega_0 t}\leftrightarrow F(\omega+\omega_0)
+\]
+
+\subsubsection{尺度变换}
+
+若：
+
+\[
+f(t)\leftrightarrow F(\omega)
+\]
+
+则：
+
+\[
+f(at)\leftrightarrow \frac{1}{|a|}F\left(\frac{\omega}{a}\right)
+\]
+
+时域压缩，频域展宽；时域展宽，频域压缩。
+
+\subsubsection{微分性质}
+
+若：
+
+\[
+f(t)\leftrightarrow F(\omega)
+\]
+
+则：
+
+\[
+\frac{d f(t)}{dt}\leftrightarrow j\omega F(\omega)
+\]
+
+\subsubsection{积分性质}
+
+若：
+
+\[
+f(t)\leftrightarrow F(\omega)
+\]
+
+则：
+
+\[
+\int_{-\infty}^{t}f(\tau)\,d\tau
+\leftrightarrow
+\frac{F(\omega)}{j\omega}+\pi F(0)\delta(\omega)
+\]
+
+\subsection{调制性质}
+
+由于：
+
+\[
+\cos \omega_0 t=\frac{1}{2}\left(e^{j\omega_0 t}+e^{-j\omega_0 t}\right)
+\]
+
+所以：
+
+\[
+f(t)\cos \omega_0 t
+\leftrightarrow
+\frac{1}{2}\left[F(\omega-\omega_0)+F(\omega+\omega_0)\right]
+\]
+
+由于：
+
+\[
+\sin \omega_0 t=\frac{1}{2j}\left(e^{j\omega_0 t}-e^{-j\omega_0 t}\right)
+\]
+
+所以：
+
+\[
+f(t)\sin \omega_0 t
+\leftrightarrow
+\frac{1}{2j}\left[F(\omega-\omega_0)-F(\omega+\omega_0)\right]
+\]
+
+\subsection{采样定理}
+
+若连续信号 $f(t)$ 的最高频率为 $f_{\max}$，为了能够由采样信号无失真恢复原信号，采样频率必须满足：
+
+\[
+f_s\geq 2f_{\max}
+\]
+
+其中：
+
+\[
+f_s=\frac{1}{T_s}
+\]
+
+称 $2f_{\max}$ 为奈奎斯特采样频率。
+
+%========================
+\section{拉普拉斯变换}
+
+\subsection{拉普拉斯变换定义}
+
+连续信号 $f(t)$ 的单边拉普拉斯变换为：
+
+\[
+F(s)=\int_{0^-}^{+\infty}f(t)e^{-st}\,dt
+\]
+
+记作：
+
+\[
+f(t)\leftrightarrow F(s)
+\]
+
+\subsection{常用拉普拉斯变换对}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c c}
+\toprule
+时域信号 & 拉普拉斯变换 \\
+\midrule
+$\delta(t)$ & $1$ \\
+$u(t)$ & $\dfrac{1}{s}$ \\
+$e^{-at}u(t)$ & $\dfrac{1}{s+a}$ \\
+$t u(t)$ & $\dfrac{1}{s^2}$ \\
+$\dfrac{t^{n-1}}{(n-1)!}u(t)$ & $\dfrac{1}{s^n}$ \\
+$\sin \omega_0 t\,u(t)$ & $\dfrac{\omega_0}{s^2+\omega_0^2}$ \\
+$\cos \omega_0 t\,u(t)$ & $\dfrac{s}{s^2+\omega_0^2}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{拉普拉斯变换性质}
+
+\subsubsection{线性性质}
+
+\[
+af_1(t)+bf_2(t)\leftrightarrow aF_1(s)+bF_2(s)
+\]
+
+\subsubsection{时移性质}
+
+\[
+f(t-t_0)u(t-t_0)\leftrightarrow e^{-st_0}F(s)
+\]
+
+\subsubsection{复频移性质}
+
+若：
+
+\[
+f(t)\leftrightarrow F(s)
+\]
+
+则：
+
+\[
+e^{-at}f(t)\leftrightarrow F(s+a)
+\]
+
+\subsubsection{尺度性质}
+
+\[
+f(at)\leftrightarrow \frac{1}{a}F\left(\frac{s}{a}\right),\qquad a>0
+\]
+
+\subsubsection{微分性质}
+
+单边拉普拉斯变换中：
+
+\[
+f'(t)\leftrightarrow sF(s)-f(0^-)
+\]
+
+\[
+f''(t)\leftrightarrow s^2F(s)-sf(0^-)-f'(0^-)
+\]
+
+一般地：
+
+\[
+f^{(n)}(t)\leftrightarrow s^nF(s)-s^{n-1}f(0^-)-s^{n-2}f'(0^-)-\cdots-f^{(n-1)}(0^-)
+\]
+
+\subsection{由系统函数求微分方程}
+
+若系统函数为：
+
+\[
+H(s)=\frac{Y(s)}{F(s)}
+=\frac{b_ms^m+b_{m-1}s^{m-1}+\cdots+b_0}
+{a_ns^n+a_{n-1}s^{n-1}+\cdots+a_0}
+\]
+
+则有：
+
+\[
+\left(a_ns^n+a_{n-1}s^{n-1}+\cdots+a_0\right)Y(s)
+=
+\left(b_ms^m+b_{m-1}s^{m-1}+\cdots+b_0\right)F(s)
+\]
+
+将 $s$ 替换成微分算子，即可得到微分方程：
+
+\[
+a_ny^{(n)}(t)+a_{n-1}y^{(n-1)}(t)+\cdots+a_0y(t)
+=
+b_mf^{(m)}(t)+b_{m-1}f^{(m-1)}(t)+\cdots+b_0f(t)
+\]
+
+\subsection{$s$ 域电路模型}
+
+在拉普拉斯变换中，电路元件可以等效为 $s$ 域阻抗：
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c c}
+\toprule
+元件 & $s$ 域阻抗 \\
+\midrule
+电阻 $R$ & $R$ \\
+电容 $C$ & $\dfrac{1}{sC}$ \\
+电感 $L$ & $sL$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+因此，求电路响应时可以按如下步骤：
+
+\begin{enumerate}
+    \item 将电路变换到 $s$ 域。
+    \item 电阻仍为 $R$。
+    \item 电容用 $\dfrac{1}{sC}$ 表示。
+    \item 电感用 $sL$ 表示。
+    \item 根据串并联关系列写电压或电流方程。
+    \item 求出 $Y(s)$ 后，再进行拉普拉斯反变换。
+\end{enumerate}
+
+\subsection{系统稳定性}
+
+连续时间 LTI 系统稳定的充要条件是：
+
+\[
+H(s)
+\]
+
+的所有极点均位于 $s$ 平面的左半平面，即：
+
+\[
+\operatorname{Re}(s_i)<0
+\]
+
+如果存在极点位于右半平面，则系统不稳定。
+
+如果极点位于虚轴上，需要具体分析，通常不能简单判为稳定。
+
+%========================
+\section{离散时间信号与系统}
+
+\subsection{常见离散信号}
+
+离散时间信号通常写作：
+
+\[
+f(k)
+\]
+
+其中 $k$ 为整数。
+
+常见离散信号有：
+
+\begin{itemize}
+    \item 单位序列：
+    \[
+    \delta(k)=
+    \begin{cases}
+    1, & k=0\\
+    0, & k\neq 0
+    \end{cases}
+    \]
+    \item 单位阶跃序列：
+    \[
+    u(k)=
+    \begin{cases}
+    1, & k\geq 0\\
+    0, & k<0
+    \end{cases}
+    \]
+    \item 指数序列：
+    \[
+    a^ku(k)
+    \]
+\end{itemize}
+
+\subsection{单位序列的筛选性质}
+
+离散单位序列具有筛选性质：
+
+\[
+f(k)\delta(k-k_0)=f(k_0)\delta(k-k_0)
+\]
+
+并且：
+
+\[
+\sum_{k=-\infty}^{+\infty}f(k)\delta(k-k_0)=f(k_0)
+\]
+
+\subsection{离散卷积和}
+
+离散时间 LTI 系统的零状态响应为：
+
+\[
+y_{zs}(k)=f(k)*h(k)
+\]
+
+其中卷积和定义为：
+
+\[
+y(k)=\sum_{m=-\infty}^{+\infty}f(m)h(k-m)
+\]
+
+常用性质：
+
+\[
+f(k)*\delta(k)=f(k)
+\]
+
+\[
+f(k)*\delta(k-k_0)=f(k-k_0)
+\]
+
+\[
+f(k-k_1)*\delta(k-k_2)=f(k-k_1-k_2)
+\]
+
+\subsection{离散系统差分方程}
+
+离散系统常用差分方程描述：
+
+\[
+y(k)+a_1y(k-1)+a_2y(k-2)+\cdots+a_Ny(k-N)
+=
+b_0f(k)+b_1f(k-1)+\cdots+b_Mf(k-M)
+\]
+
+其中：
+
+\begin{itemize}
+    \item $y(k-i)$ 表示输出延时 $i$ 个单位。
+    \item $f(k-i)$ 表示输入延时 $i$ 个单位。
+    \item 延时单元在 $z$ 域中对应 $z^{-1}$。
+\end{itemize}
+
+%========================
+\section{$Z$ 变换}
+
+\subsection{$Z$ 变换定义}
+
+离散序列 $f(k)$ 的双边 $Z$ 变换定义为：
+
+\[
+F(z)=\sum_{k=-\infty}^{+\infty}f(k)z^{-k}
+\]
+
+记作：
+
+\[
+f(k)\leftrightarrow F(z)
+\]
+
+单边 $Z$ 变换为：
+
+\[
+F(z)=\sum_{k=0}^{+\infty}f(k)z^{-k}
+\]
+
+\subsection{常用 $Z$ 变换对}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c c}
+\toprule
+时域序列 & $Z$ 变换 \\
+\midrule
+$\delta(k)$ & $1$ \\
+$u(k)$ & $\dfrac{1}{1-z^{-1}}$ \\
+$a^ku(k)$ & $\dfrac{1}{1-az^{-1}}$ \\
+$-a^ku(-k-1)$ & $\dfrac{1}{1-az^{-1}}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+需要注意：同一个代数表达式可能对应不同序列，关键取决于收敛域。
+
+\subsection{$Z$ 变换时移性质}
+
+若：
+
+\[
+f(k)\leftrightarrow F(z)
+\]
+
+则双边 $Z$ 变换中有：
+
+\[
+f(k-k_0)\leftrightarrow z^{-k_0}F(z)
+\]
+
+特别地：
+
+\[
+f(k-1)\leftrightarrow z^{-1}F(z)
+\]
+
+\[
+f(k+1)\leftrightarrow zF(z)
+\]
+
+\subsection{收敛域}
+
+$Z$ 变换必须结合收敛域 ROC 判断原序列。
+
+例如：
+
+\[
+F(z)=\frac{1}{1-az^{-1}}
+\]
+
+若收敛域为：
+
+\[
+|z|>|a|
+\]
+
+则对应右边序列：
+
+\[
+f(k)=a^ku(k)
+\]
+
+若收敛域为：
+
+\[
+|z|<|a|
+\]
+
+则对应左边序列：
+
+\[
+f(k)=-a^ku(-k-1)
+\]
+
+\subsection{利用 $Z$ 变换求差分方程响应}
+
+对于差分方程：
+
+\[
+y(k)+a_1y(k-1)+\cdots+a_Ny(k-N)
+=
+b_0f(k)+b_1f(k-1)+\cdots+b_Mf(k-M)
+\]
+
+在零初始条件下进行 $Z$ 变换：
+
+\[
+Y(z)\left(1+a_1z^{-1}+\cdots+a_Nz^{-N}\right)
+=
+F(z)\left(b_0+b_1z^{-1}+\cdots+b_Mz^{-M}\right)
+\]
+
+所以系统函数为：
+
+\[
+H(z)=\frac{Y(z)}{F(z)}
+=
+\frac{b_0+b_1z^{-1}+\cdots+b_Mz^{-M}}
+{1+a_1z^{-1}+\cdots+a_Nz^{-N}}
+\]
+
+%========================
+\section{系统函数与稳定性}
+
+\subsection{连续系统函数}
+
+连续系统中：
+
+\[
+H(s)=\frac{Y(s)}{F(s)}
+\]
+
+称为系统函数。
+
+若输入为 $f(t)$，输出为 $y(t)$，则：
+
+\[
+Y(s)=H(s)F(s)
+\]
+
+\subsection{离散系统函数}
+
+离散系统中：
+
+\[
+H(z)=\frac{Y(z)}{F(z)}
+\]
+
+若输入为 $f(k)$，输出为 $y(k)$，则：
+
+\[
+Y(z)=H(z)F(z)
+\]
+
+\subsection{连续系统稳定性}
+
+连续系统稳定条件：
+
+\[
+H(s)\text{ 的所有极点均在左半平面}
+\]
+
+即：
+
+\[
+\operatorname{Re}(p_i)<0
+\]
+
+\subsection{离散系统稳定性}
+
+离散系统稳定条件：
+
+\[
+H(z)\text{ 的所有极点均在单位圆内}
+\]
+
+即：
+
+\[
+|p_i|<1
+\]
+
+%========================
+\section{复习重点总结}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title=重点一：波形变换]
+重点掌握：
+\[
+f(t-a),\quad f(t+a),\quad f(-t),\quad f(at+b)
+\]
+的平移、反转、尺度变化。
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title=重点二：冲激函数]
+重点掌握：
+\[
+\int_{-\infty}^{+\infty}f(t)\delta(t-t_0)\,dt=f(t_0)
+\]
+以及：
+\[
+f(t)*\delta(t-t_0)=f(t-t_0)
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title=重点三：卷积]
+连续卷积：
+\[
+y(t)=\int_{-\infty}^{+\infty}f(\tau)h(t-\tau)\,d\tau
+\]
+
+离散卷积：
+\[
+y(k)=\sum_{m=-\infty}^{+\infty}f(m)h(k-m)
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title=重点四：傅里叶变换]
+重点掌握：
+\[
+f(t-t_0)\leftrightarrow F(\omega)e^{-j\omega t_0}
+\]
+
+\[
+f(at)\leftrightarrow \frac{1}{|a|}F\left(\frac{\omega}{a}\right)
+\]
+
+\[
+f(t)\cos\omega_0t
+\leftrightarrow
+\frac{1}{2}\left[F(\omega-\omega_0)+F(\omega+\omega_0)\right]
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title=重点五：拉普拉斯变换]
+重点掌握：
+\[
+\delta(t)\leftrightarrow 1
+\]
+
+\[
+u(t)\leftrightarrow \frac{1}{s}
+\]
+
+\[
+e^{-at}u(t)\leftrightarrow \frac{1}{s+a}
+\]
+
+\[
+f'(t)\leftrightarrow sF(s)-f(0^-)
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title=重点六：$Z$ 变换]
+重点掌握：
+\[
+f(k-1)\leftrightarrow z^{-1}F(z)
+\]
+
+\[
+\delta(k)\leftrightarrow 1
+\]
+
+\[
+a^ku(k)\leftrightarrow \frac{1}{1-az^{-1}}
+\]
+以及收敛域对反变换结果的影响。
+\end{tcolorbox}
+
+\end{document}

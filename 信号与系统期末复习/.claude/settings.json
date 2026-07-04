@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -i 's/\\\\\\\\section\\\\*{3\\\\. 利用微分性质求梯形信号频谱}/\\\\\\\\section*{3. 利用积分性质求梯形信号频谱}/' \"d:/LaTex/Latex_Project/信号与系统期末复习/signals_systems_big_problems_solutions.tex\" && grep -n \"积分性质\" \"d:/LaTex/Latex_Project/信号与系统期末复习/signals_systems_big_problems_solutions.tex\" | head -3)",
+      "Bash(pdflatex -interaction=nonstopmode -halt-on-error signals_systems_big_problems_solutions.tex)"
+    ],
+    "additionalDirectories": [
+      "d:\\LaTex\\Latex_Project\\信号与系统期末复习"
+    ]
+  }
+}

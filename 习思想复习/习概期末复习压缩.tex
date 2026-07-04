@@ -1,0 +1,452 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+% ==================== 基础排版 ====================
+\usepackage[margin=2.25cm,headheight=14pt]{geometry}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{bookmark}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+% ==================== 列表与段落 ====================
+\setlist[itemize]{leftmargin=2.2em,itemsep=0.4em,topsep=0.4em}
+\setlist[enumerate]{leftmargin=2.4em,itemsep=0.4em,topsep=0.4em}
+\setlength{\parindent}{2em}
+\linespread{1.18}
+
+% ==================== 色彩定义 ====================
+\definecolor{KeyYellow}     {RGB}{255,247,177}
+\definecolor{KeyYellowFrame}{RGB}{210,175,0}
+\definecolor{KeyGreen}      {RGB}{220,239,205}
+\definecolor{KeyGreenFrame} {RGB}{69,148,77}
+\definecolor{KeyLineGreen}  {RGB}{88,190,88}
+\definecolor{AccentBlue}    {RGB}{30,100,180}
+\definecolor{LightGray}     {RGB}{245,245,245}
+\definecolor{MidGray}       {RGB}{180,180,180}
+
+% ==================== 页眉页脚 ====================
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{MidGray}\textsf{习概·期末复习}}
+\fancyhead[R]{\small\color{MidGray}\textsf{\leftmark}}
+\fancyfoot[C]{\small\color{MidGray}—\ \thepage\ —}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\small\color{MidGray}—\ \thepage\ —}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% ==================== 节标题样式 ====================
+\ctexset{
+  section = {
+    format     = \Large\bfseries\color{AccentBlue},
+    aftername  = \quad,
+    afterskip  = 1.2ex plus 0.3ex minus 0.2ex,
+  },
+  subsection = {
+    format     = \large\bfseries\color{AccentBlue!80!black},
+    aftername  = \quad,
+    afterskip  = 1.0ex plus 0.2ex minus 0.15ex,
+  },
+}
+
+% ==================== 彩色信息盒 ====================
+\newtcolorbox{yellowbox}[1]{
+  enhanced,
+  breakable,
+  colback      = white,
+  colbacktitle = white,
+  colframe     = KeyYellowFrame,
+  coltitle     = black,
+  fonttitle    = \bfseries\small,
+  title        = {#1},
+  boxrule      = 0.8pt,
+  arc          = 2mm,
+  outer arc    = 2mm,
+  left         = 3mm,
+  right        = 3mm,
+  top          = 2mm,
+  bottom       = 2mm,
+  toptitle     = 1.8mm,
+  bottomtitle  = 1.8mm,
+  drop fuzzy shadow = {color=black!15},
+  before skip  = 1.2ex,
+  after skip   = 1.5ex,
+}
+
+\newtcolorbox{greenbox}[1]{
+  enhanced,
+  breakable,
+  colback      = white,
+  colbacktitle = white,
+  colframe     = KeyGreenFrame,
+  coltitle     = black,
+  fonttitle    = \bfseries\small,
+  title        = {#1},
+  boxrule      = 0.8pt,
+  arc          = 2mm,
+  outer arc    = 2mm,
+  left         = 3mm,
+  right        = 3mm,
+  top          = 2mm,
+  bottom       = 2mm,
+  toptitle     = 1.8mm,
+  bottomtitle  = 1.8mm,
+  drop fuzzy shadow = {color=black!15},
+  before skip  = 1.2ex,
+  after skip   = 1.5ex,
+}
+
+\newtcolorbox{greenlinebox}[1]{
+  enhanced,
+  breakable,
+  colback      = white,
+  colframe     = KeyLineGreen,
+  coltitle     = black,
+  colbacktitle = white,
+  fonttitle    = \bfseries\small,
+  title        = {#1},
+  boxrule      = 1.1pt,
+  arc          = 2mm,
+  outer arc    = 2mm,
+  left         = 3mm,
+  right        = 3mm,
+  top          = 2mm,
+  bottom       = 2mm,
+  toptitle     = 1.8mm,
+  bottomtitle  = 1.8mm,
+  drop fuzzy shadow = {color=black!12},
+  before skip  = 1.2ex,
+  after skip   = 1.5ex,
+}
+
+% ==================== 标题页 ====================
+\title{}
+\author{}
+\date{}
+
+\begin{document}
+
+
+
+% ---------- 标记说明 ----------
+\noindent{\bfseries 标记说明}\par\vspace{-0.4em}\noindent{\color{AccentBlue!40}\rule{\textwidth}{0.8pt}}
+
+\vspace{0.6em}
+\begin{tcolorbox}[
+  enhanced,
+  colback = white,
+  colframe = MidGray!40,
+  boxrule = 0.6pt,
+  arc     = 2mm,
+  left    = 3mm,
+  right   = 3mm,
+  top     = 2.5mm,
+  bottom  = 2.5mm,
+]
+\begin{itemize}[leftmargin=1.8em,itemsep=0.5em]
+  \item \tikz[baseline=-0.7ex]{\fill[white,draw=KeyYellowFrame,line width=1.4pt,rounded corners=1.2pt] (0,0) rectangle (0.75em,0.75em);}
+        \textbf{黄色}：三个专业高度重合的重点；PDF 中的浅黄和亮黄均合并在此处。
+
+  \item \tikz[baseline=-0.7ex]{\fill[white,draw=KeyGreenFrame,line width=1.4pt,rounded corners=1.2pt] (0,0) rectangle (0.75em,0.75em);}
+        \textbf{绿色}：本专业有、商英没有的补充重点。
+
+  \item \tikz[baseline=-0.7ex]{\fill[white,draw=KeyLineGreen,line width=1.4pt,rounded corners=1.2pt] (0,0) rectangle (0.75em,0.75em);}
+        \textbf{绿色画线}：三个专业重合、可能作为大题考查的内容。
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{1em}
+
+
+% ================================================================
+\section{黄色重点：三个专业高度重合}
+% ================================================================
+
+\subsection{理论基础、重要会议与指导思想}
+
+\begin{yellowbox}{时代背景与“两个结合”}
+\begin{enumerate}
+  \item 世界百年未有之大变局。
+  \item 中华民族伟大复兴的战略全局。
+  \item “两个结合”是我们党在探索中国特色社会主义道路中得出的规律性认识，是我们取得成功的最大法宝。
+\end{enumerate}
+\end{yellowbox}
+
+\begin{yellowbox}{“六个必须坚持”}
+党的二十大提出“六个必须坚持”：
+\begin{enumerate}
+  \item 必须坚持人民至上；
+  \item 必须坚持自信自立；
+  \item 必须坚持守正创新；
+  \item 必须坚持问题导向；
+  \item 必须坚持系统观念；
+  \item 必须坚持胸怀天下。
+\end{enumerate}
+\end{yellowbox}
+
+\begin{yellowbox}{写入宪法}
+2018年3月，十三届全国人大一次会议通过宪法修正案，郑重把习近平新时代中国特色社会主义思想写入宪法。
+\end{yellowbox}
+
+\subsection{新时代与中国式现代化}
+
+\begin{yellowbox}{社会主要矛盾}
+中国特色社会主义进入新时代的基本依据：社会主要矛盾转化为人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。
+\end{yellowbox}
+
+\begin{yellowbox}{中国式现代化的中国特色}
+\begin{enumerate}
+  \item 人口规模巨大的现代化；
+  \item 全体人民共同富裕的现代化；
+  \item 物质文明和精神文明相协调发展的现代化；
+  \item 人与自然和谐共生的现代化；
+  \item 走和平发展道路的现代化。
+\end{enumerate}
+\end{yellowbox}
+
+\begin{yellowbox}{推进中国式现代化需要牢牢把握的重大原则}
+\begin{enumerate}
+  \item 谁来领导：坚持和加强党的领导；
+  \item 走什么道路：坚持中国特色社会主义道路；
+  \item 依靠谁：坚持以人民为中心的发展思想；
+  \item 发展动力：坚持深化改革开放；
+  \item 需要的精神状态：坚持发扬斗争精神。
+\end{enumerate}
+中国式现代化的致胜法宝：坚持团结奋斗。
+\end{yellowbox}
+
+\begin{yellowbox}{党的领导与马克思主义}
+\begin{enumerate}
+  \item 中国特色社会主义最本质的特征是中国共产党的领导。
+  \item 中国特色社会主义制度的最大优势是中国共产党的领导。
+  \item 中国共产党以马克思主义作为行动指南。
+  \item 人民性是马克思主义的本质属性和鲜明品格。
+\end{enumerate}
+\end{yellowbox}
+
+\subsection{坚持以人民为中心}
+
+\begin{yellowbox}{人民立场与人的全面发展}
+\begin{enumerate}
+  \item 人民立场是中国共产党的根本政治立场。
+  \item 必须尊重人民首创精神。
+  \item 现代化的最终目标是实现人的自由而全面的发展。
+\end{enumerate}
+\end{yellowbox}
+
+\subsection{全面深化改革与高质量发展}
+
+\begin{yellowbox}{全面深化改革要坚持正确方法论}
+\begin{enumerate}
+  \item 增强全面深化改革的系统性、整体性、协同性；
+  \item 加强顶层设计和摸着石头过河相结合；
+  \item 统筹改革发展稳定；
+  \item 胆子要大，步子要稳；
+  \item 坚持重大改革于法有据。
+\end{enumerate}
+\end{yellowbox}
+
+\begin{yellowbox}{新发展理念与发展要求}
+\begin{enumerate}
+  \item 新发展理念：创新、协调、绿色、开放、共享。
+  \item 发展是解决我国一切问题的基础和关键，必须贯彻新发展理念。
+\end{enumerate}
+\end{yellowbox}
+
+\begin{yellowbox}{基本经济制度与民营经济}
+\begin{enumerate}
+  \item 坚持“两个毫不动摇”：
+  \begin{enumerate}
+    \item 毫不动摇巩固和发展公有制经济；
+    \item 毫不动摇鼓励、支持、引导非公有制经济发展。
+  \end{enumerate}
+  \item 民营经济是非公有制经济的重要经济组织形式，是推进中国式现代化的生力军，是高质量发展的重要基础，是推动我国全面建成社会主义现代化强国、实现第二个百年奋斗目标的重要力量。
+  \item 《民营经济促进法》施行日期：2025年5月20日。
+\end{enumerate}
+\end{yellowbox}
+
+\begin{yellowbox}{教育、科技、人才}
+教育、科技、人才是全面建设社会主义现代化国家的基础性、战略性支撑。
+\end{yellowbox}
+
+\subsection{全过程人民民主与全面依法治国}
+
+\begin{yellowbox}{全过程人民民主}
+\begin{enumerate}
+  \item 我国的根本政治制度：人民代表大会制度。
+  \item 基本政治制度：中国共产党领导的多党合作和政治协商制度、民族区域自治制度、基层群众自治制度。
+  \item 全过程人民民主是全链条、全方位、全覆盖的民主。
+  \item 全过程人民民主是最广泛、最真实、最管用的民主。
+  \item 协商民主是实践全过程人民民主的重要形式。
+  \item 基层民主是全过程人民民主的重要体现。
+  \item 统战工作的本质要求是大团结、大联合，解决的就是人心和力量问题。
+\end{enumerate}
+\end{yellowbox}
+
+\begin{yellowbox}{习近平法治思想与全面依法治国}
+\begin{enumerate}
+  \item 习近平法治思想的主要内容集中体现为“十二个坚持”；重点记忆第十二个：依法治国和依规治党的有机统一。
+  \item 统筹处理全面依法治国的重大关系：
+  \begin{enumerate}
+    \item 正确处理政治和法治的关系；
+    \item 正确处理改革和法治的关系；
+    \item 正确处理依法治国和以德治国的关系；
+    \item 正确处理依法治国和依规治党的关系。
+  \end{enumerate}
+\end{enumerate}
+\end{yellowbox}
+
+\subsection{民生、生态安全、国防与统一}
+
+\begin{yellowbox}{保障和改善民生}
+\begin{enumerate}
+  \item 正确把握民生和发展的关系，是保障和改善民生的重要前提。
+  \item 坚持尽力而为、量力而行，是保障和改善民生的重要方针。
+\end{enumerate}
+\end{yellowbox}
+
+\begin{yellowbox}{生态文明}
+\begin{enumerate}
+  \item 生态环境问题归根到底是经济发展方式和生活方式问题。
+  \item 处理好绿水青山和金山银山的关系，关键在人，关键在思路。
+  \item 党的十九大把“增强绿水青山就是金山银山的意识”写入党章。
+  \item 2018年3月，十三届全国人大一次会议通过宪法修正案，把生态文明写入宪法。
+  \item 我国第二部法典：《中华人民共和国生态环境法典》（原资料标注：2026年8月15日）。
+\end{enumerate}
+\end{yellowbox}
+
+\begin{yellowbox}{总体国家安全观与关键日期}
+\begin{enumerate}
+  \item 总体国家安全观：以人民安全为宗旨，以政治安全为根本，以经济安全为基础，以军事、科技、文化、社会安全为保障。
+  \item 4月15日：全民国家安全教育日。
+  \item 8月15日：全国生态日。
+  \item 10月25日：台湾光复纪念日。
+\end{enumerate}
+\end{yellowbox}
+
+\begin{yellowbox}{强军目标}
+\begin{enumerate}
+  \item 听党指挥是灵魂；
+  \item 能打胜仗是核心；
+  \item 作风优良是保证。
+\end{enumerate}
+\end{yellowbox}
+
+\begin{yellowbox}{“一国两制”的科学内涵}
+\begin{enumerate}
+  \item 牢牢把握“一国两制”的根本宗旨：坚定不移，确保不会变、不动摇；全面准确，确保不走样、不变形。
+  \item 准确把握“一国”和“两制”的关系：一国是实行两制的前提和基础；两制从属和派生于一国，并统一于一国之内。
+  \item 坚持中央全面管治权和保障特别行政区高度自治权统一。
+  \item 坚定落实爱国者治港、爱国者治澳原则。
+\end{enumerate}
+\end{yellowbox}
+
+\begin{yellowbox}{全面从严治党}
+党的自我革命是跳出历史周期律的第二个答案。
+\end{yellowbox}
+
+% ================================================================
+\section{绿色画线：三个专业重合，可能作为大题}
+% ================================================================
+
+\subsection{牢固树立和践行正确的政绩观}
+
+\begin{greenlinebox}{大题要点：正确政绩观}
+政绩为谁而树、树什么样的政绩、靠什么树政绩，是一个必须认真回答的重大问题。中国共产党把为民办事、为民造福作为最重要的政绩，把为老百姓办了多少好事实事作为检验政绩的重要标准。
+
+坚持把好事实事做到群众心坎上，真正做到对历史和人民负责。评价干部的工作成效，不仅要看纸面上的指标数据，更要看人民的生活好不好、民生是否改善、生态是否良好、社会是否进步；不能简单以国内生产总值增长率论英雄，更不能搞脱离实际的盲目攀比，不搞劳民伤财的形象工程和政绩工程。
+
+要以“功成不必在我”的精神境界和“功成必定有我”的历史担当，多做为后人作铺垫、打基础、利长远的好事，追求人民群众的好口碑、历史沉淀之后的真评价。
+\end{greenlinebox}
+
+\subsection{全面推进依法治国的总抓手}
+
+\begin{greenlinebox}{大题要点：建设中国特色社会主义法治体系}
+必须加快形成完备的法律规范体系、高效的法治实施体系、严密的法治监督体系、有力的法治保障体系，形成完善的党内法规体系。
+\begin{enumerate}
+  \item \textbf{完备的法律规范体系：}以宪法为核心，由部门齐全、结构严谨、内部协调、体例科学、调整有效的法律规范构成有机整体。
+  \item \textbf{高效的法治实施体系：}包括执法、司法、守法等各个环节协调高效运转；把平等保护贯彻到立法、执法、司法、守法等各个环节，依法平等保护各类市场主体产权和合法权益。
+  \item \textbf{严密的法治监督体系：}以规范和约束公权力运行为重点；完善权力运行制约和监督机制，规范立法、执法、司法机关权力行使，构建党的统一领导、全面覆盖、权威高效的法治监督体系。
+  \item \textbf{有力的法治保障体系：}包括政治、思想、组织、制度、队伍、科技等保障条件；充分运用大数据、云计算、人工智能等现代科技手段，全面建设智慧法治，推进法治中国建设的数据化、网络化、智能化。
+  \item \textbf{完善的党内法规体系：}把党内法规体系纳入中国特色社会主义法治体系，是我国法治区别于其他国家法治的鲜明特征；全面依法治国必须构建内容科学、程序严密、配套完备、运行有效的党内法规体系。
+\end{enumerate}
+\end{greenlinebox}
+
+\subsection{文化繁荣兴盛与社会主义意识形态}
+
+\begin{greenlinebox}{大题要点：文化繁荣兴盛的重要性}
+\begin{enumerate}
+  \item 文化繁荣兴盛是实现中华民族伟大复兴的精神支撑；
+  \item 文化繁荣兴盛是建设社会主义现代化强国的应有之义；
+  \item 文化繁荣兴盛是满足人民日益增长的美好生活需要的内在要求；
+  \item 文化繁荣兴盛是在世界文化激荡中站稳脚跟的前提基础。
+\end{enumerate}
+\end{greenlinebox}
+
+\begin{greenlinebox}{大题要点：坚持马克思主义在意识形态领域指导地位的根本制度}
+\begin{enumerate}
+  \item 必须坚持马克思主义在意识形态领域指导地位的根本制度。
+  \item 马克思主义是我们立党立国、兴党兴国的根本指导思想。
+  \item 坚持马克思主义在意识形态领域指导地位的制度，是中国特色社会主义制度体系的一项根本制度。
+  \item 坚持和加强党对宣传思想文化工作全面领导，是发展社会主义先进文化的有力保障。
+  \item 坚持马克思主义在意识形态领域指导地位的根本制度是历史的结论。马克思主义深刻揭示人类社会发展规律，是来自人民、为了人民、造福人民的思想体系，是指引人民认识世界、改造世界的行动指南。
+  \item 坚持马克思主义在意识形态领域指导地位的根本制度，是坚持和巩固我国社会主义制度、保障我国文化建设正确方向的必然要求。
+  \item 面对世界范围的思想文化相互激荡，我国社会思想观念和价值取向日趋多样。
+  \item 只有坚持以马克思主义统领多样化思想文化发展，才能牢牢把握社会主义先进文化前进方向，夯实共同的思想基础，拉紧共同的精神纽带，促进全体人民在思想上、精神上凝聚在一起。
+\end{enumerate}
+\end{greenlinebox}
+
+\subsection{推动构建新型国际关系}
+
+\begin{greenlinebox}{大题要点：新型国际关系的主要内容}
+\begin{enumerate}
+  \item 秉持相互尊重、公平正义、合作共赢原则，走出一条对话而不对抗、结伴而不结盟的国与国外交新路。
+  \item 坚持在和平共处五项原则基础上同各国发展友好合作，深化拓展平等、开放、合作的全球伙伴关系。
+  \item 这是新时代中国外交理论和实践的重要创新。
+  \item 推进大国协调合作，打造周边命运共同体，加强同发展中国家团结合作，不断完善我国全方位、多层次、立体化的外交布局，构建新型政党关系，开创国际关系新模式。
+  \item 推进大国协调合作，构建和平共处、总体稳定、均衡发展的大国关系格局，是中国对外关系的重要内容。
+  \item 坚持亲诚惠容和与邻为善、以邻为伴的周边外交方针，深化同周边国家友好互信和利益融合。
+  \item 秉持真实亲诚理念和正确义利观，加强同发展中国家团结合作。
+  \item 秉持求同存异、相互尊重、互学互鉴理念，构建新型政党关系。
+\end{enumerate}
+\end{greenlinebox}
+
+% ================================================================
+\section{绿色重点：本专业有、商英没有}
+% ================================================================
+
+\subsection{坚持人民立场}
+
+\begin{greenbox}{人民立场的具体要求}
+\begin{enumerate}
+  \item 坚持人民立场，就要热爱人民、尊重人民、敬畏人民。
+  \item 依靠人民创造历史伟业，必须尊重人民主体地位。
+\end{enumerate}
+\end{greenbox}
+
+\subsection{保障和改善民生}
+
+\begin{greenbox}{增进民生福祉}
+\begin{enumerate}
+  \item 增进民生福祉是坚持立党为公、执政为民的本质要求。
+  \item 增进民生福祉是社会主义生产的根本目的。
+\end{enumerate}
+\end{greenbox}
+
+\subsection{跳出历史周期律}
+
+\begin{greenbox}{跳出历史周期律的办法}
+\begin{enumerate}
+  \item 人民民主监督；
+  \item 自我革命。
+\end{enumerate}
+\end{greenbox}
+
+\end{document}
